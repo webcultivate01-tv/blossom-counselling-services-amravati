@@ -1,0 +1,420 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Us – Blossom Counseling</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500;600&family=Rubik:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="style.css">
+<style>
+/* About Hero */
+.about-page-hero {
+  position: relative; overflow: hidden;
+  height: 70vh; min-height: 420px; box-sizing: border-box; padding: 30px 5% 90px;
+  display: flex; align-items: center; justify-content: center; text-align: center;
+  background: url('https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=1800&auto=format&fit=crop&q=70') center/cover no-repeat;
+}
+.about-page-hero::before {
+  content: ''; position: absolute; inset: 0;
+  background: linear-gradient(135deg, rgba(48,50,120,0.92) 0%, rgba(90,92,184,0.82) 55%, rgba(111,115,210,0.70) 100%);
+}
+.about-page-hero::after {
+  content: ''; position: absolute; width: 420px; height: 420px; border-radius: 50%;
+  right: -120px; bottom: -160px; background: rgba(255,255,255,0.08);
+}
+.about-hero-text { position: relative; z-index: 1; max-width: 780px; color: #fff; animation: heroIn .9s cubic-bezier(.22,1,.36,1) both; }
+.about-hero-text .breadcrumb { display:inline-flex; align-items:center; gap:10px; font-size:15px; color:rgba(255,255,255,0.85); margin-bottom:14px; padding:6px 16px; border-radius:30px; background:rgba(255,255,255,0.14); backdrop-filter:blur(4px); }
+.about-hero-text .breadcrumb a { color:#fff; font-weight:500; }
+.about-hero-text .breadcrumb i { font-size:11px; opacity:.8; }
+.about-hero-eyebrow { display:block; font-size:14px; font-weight:600; letter-spacing:2.5px; text-transform:uppercase; color:rgba(255,255,255,0.8); margin-bottom:14px; }
+.about-hero-text h1 { font-family:var(--font-display); font-size:clamp(30px,4.6vw,54px); font-weight:700; color:#fff; margin-bottom:14px; line-height:1.12; }
+.about-hero-text h1 em { font-style:normal; color:#ffe9a8; }
+.about-hero-text p { font-size:18px; color:rgba(255,255,255,0.92); line-height:1.8; max-width:640px; margin:0 auto 22px; }
+.about-hero-btns { display:flex; gap:14px; justify-content:center; flex-wrap:wrap; }
+.about-hero-btns a { display:inline-flex; align-items:center; gap:8px; padding:13px 28px; border-radius:40px; font-weight:600; font-size:16px; transition:all .25s; }
+.about-hero-btns .hb-solid { background:#fff; color:var(--primary-dark); }
+.about-hero-btns .hb-solid:hover { transform:translateY(-3px); box-shadow:0 10px 26px rgba(0,0,0,0.25); }
+.about-hero-btns .hb-ghost { border:2px solid rgba(255,255,255,0.8); color:#fff; }
+.about-hero-btns .hb-ghost:hover { background:rgba(255,255,255,0.15); transform:translateY(-3px); }
+@keyframes heroIn { from { opacity:0; transform:translateY(30px); } to { opacity:1; transform:none; } }
+.about-hero-wave { position:absolute; left:0; bottom:-1px; width:100%; height:80px; z-index:2; display:block; }
+@media (max-width: 768px) { .about-hero-btns { flex-wrap:nowrap; gap:8px; } .about-hero-btns a { flex:1 1 0; justify-content:center; padding:11px 10px; font-size:14px; white-space:nowrap; } .about-hero-wave { height:60px; } .about-page-hero { height:70vh; min-height:400px; padding:24px 6% 70px; } .about-hero-text p { font-size:16px; } }
+
+.about-main { padding:80px 4%; }
+.about-main-inner { display:flex; gap:56px; align-items:center; max-width:1320px; margin:0 auto; }
+.about-main-visual { flex:0 0 480px; position:relative; }
+.about-main-visual .about-img-frame { position:relative; z-index:1; border-radius:20px; overflow:hidden; box-shadow:0 20px 50px rgba(90,92,184,0.22); }
+.about-main-visual img { width:100%; height:560px; object-fit:cover; display:block; }
+.about-main-visual::before { content:''; position:absolute; left:-18px; top:-18px; width:70%; height:70%; border:3px solid var(--primary-mid, #b9bbee); border-radius:20px; z-index:0; }
+.about-exp-badge { position:absolute; right:-14px; bottom:28px; z-index:2; background:var(--primary); color:#fff; border-radius:14px; padding:16px 22px; text-align:center; box-shadow:0 10px 26px rgba(90,92,184,0.4); }
+.about-exp-badge strong { display:block; font-family:var(--font-display); font-size:32px; line-height:1; }
+.about-exp-badge span { font-size:13px; opacity:.9; }
+.about-main-text { flex:1; }
+.about-main-text p { font-size:17px; color:var(--muted); line-height:1.85; margin-bottom:18px; }
+.about-highlight { background: var(--primary-light); border-left: 3px solid var(--primary); border-radius: 0 var(--radius-sm) var(--radius-sm) 0; padding: 18px 22px; margin: 28px 0; font-size:17px; color:var(--primary-dark); line-height:1.7; font-style:italic; }
+.about-checklist { margin-top:24px; }
+.about-check { display:flex; align-items:flex-start; gap:12px; margin-bottom:12px; }
+.about-check-icon { width: 24px; height:24px; border-radius:50%; background:var(--primary); color:white; font-size:14px; display:flex; align-items:center; justify-content:center; flex-shrink:0; margin-top:1px; }
+.about-check-text { font-size:17px; color:var(--text); }
+
+/* Info strip (same as home) */
+.info-strip { background: var(--primary-dark); display:grid; grid-template-columns:repeat(3,1fr); }
+.info-item { display:flex; align-items:center; justify-content:center; gap:18px; padding:34px 5%; color:#fff; background:rgba(0,0,0,0.22); }
+.info-item:nth-child(2) { background:rgba(255,255,255,0.12); }
+.info-icon { flex:0 0 58px; width:58px; height:58px; border-radius:50%; background:#fff; color:var(--primary-dark); display:flex; align-items:center; justify-content:center; font-size:24px; box-shadow:0 4px 14px rgba(0,0,0,0.18); }
+.info-body h4 { font-family:var(--font-display); font-size:18px; font-weight:700; margin-bottom:6px; color:#fff; }
+.info-body p, .info-body a { font-size:17px; line-height:1.6; color:rgba(255,255,255,0.9); text-decoration:none; display:block; }
+.info-body .info-time b { display:inline-block; min-width:64px; color:#fff; }
+.info-body a.info-call { font-weight:600; color:#fff; }
+.info-body a.info-call:hover { text-decoration:underline; }
+.info-btn { display:inline-block !important; margin-top:8px; background:#fff; color:var(--primary-dark) !important; font-weight:700; padding:8px 18px; border-radius:30px; }
+.info-btn:hover { background:rgba(255,255,255,0.85); }
+.info-btn i { transition:transform .25s; }
+.info-btn:hover i { transform:translateX(4px); }
+@media (max-width: 900px) { .info-strip { grid-template-columns:1fr; } .info-item { justify-content:flex-start; padding:22px 6%; } }
+
+
+.mvv-section { padding:80px 5%; background:var(--warm); }
+.mvv-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:28px; max-width:1320px; margin:48px auto 0; }
+.mvv-card { position:relative; overflow:hidden; background:var(--white); border:1px solid var(--border); border-radius:20px; padding:28px 28px 24px; text-align:center; box-shadow:0 6px 24px rgba(90,92,184,0.08); transition:transform .35s cubic-bezier(.22,1,.36,1), box-shadow .35s, border-color .35s; }
+.mvv-card::before { content:''; position:absolute; left:0; top:0; width:100%; height:4px; background:linear-gradient(90deg,var(--primary-dark),var(--primary),var(--primary-mid,#b9bbee)); }
+.mvv-card::after { content:attr(data-num); position:absolute; right:20px; top:16px; font-family:var(--font-display); font-size:34px; font-weight:700; line-height:1; color:var(--primary); opacity:.12; }
+.mvv-card:hover { transform:translateY(-8px); border-color:var(--primary-mid,#b9bbee); box-shadow:0 22px 50px rgba(90,92,184,0.2); }
+.mvv-icon { width:48px; height:48px; margin:0 auto 12px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:18px; color:#fff; background:linear-gradient(135deg,var(--primary) 0%,var(--primary-dark) 100%); box-shadow:0 6px 16px rgba(90,92,184,0.3), 0 0 0 5px var(--primary-light); transition:transform .4s; }
+.mvv-card:hover .mvv-icon { transform:scale(1.08) rotate(-6deg); }
+.mvv-card h3 { font-family:var(--font-display); font-size:22px; font-weight:600; color:var(--text); margin-bottom:10px; }
+.mvv-card h3::after { content:''; display:block; width:40px; height:3px; border-radius:3px; background:var(--primary); margin:8px auto 0; transition:width .35s; }
+.mvv-card:hover h3::after { width:70px; }
+.mvv-card p { font-size:17px; color:var(--muted); line-height:1.65; margin-top:12px; }
+
+.team-section { padding:80px 5%; }
+.team-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; }
+.team-card { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; transition: all var(--transition); }
+.team-card:hover { transform:translateY(-5px); box-shadow:var(--shadow-hover); }
+.team-avatar-bg { background: linear-gradient(135deg, var(--primary-light) 0%, var(--primary-mid) 100%); height: 260px; display: flex; align-items:center; justify-content:center; overflow:hidden; }
+.team-avatar-bg img { width:100%; height:100%; object-fit:cover; object-position:top; display:block; transition:transform 0.4s ease; }
+.team-card:hover .team-avatar-bg img { transform:scale(1.05); }.team-initials { font-family:var(--font-display); font-size:52px; font-weight:700; color:var(--primary-dark); opacity:0.6; }
+.team-info { padding: 22px 22px 26px; }
+.team-name { font-family:var(--font-display); font-size:18px; font-weight:600; color:var(--text); margin-bottom:4px; }
+.team-role { font-size:17px; color:var(--primary); font-weight:500; margin-bottom:12px; }
+.team-bio { font-size:17px; color:var(--muted); line-height:1.7; }
+
+.why-about { padding:80px 5%; background:var(--warm); }
+.why-about-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:16px; margin-top:40px; }
+.why-about-item { position:relative; background:var(--white); border:1px solid var(--border); border-radius:12px; padding:26px 24px; text-align:left; transition:transform .25s ease, background .25s ease, border-color .25s ease; }
+.why-about-item::before { content:none; }
+.why-about-item:hover { transform:scale(1.03); background:var(--primary-light); border-color:var(--primary-mid); }
+.why-about-icon { width:auto; height:auto; margin:0 0 14px; display:block; font-size:22px; color:var(--primary); background:none; box-shadow:none; }
+.why-about-item:hover .why-about-icon { color:var(--primary-dark); }
+.why-about-item h5 { font-family:var(--font-body); font-size:17px; font-weight:600; color:var(--text); margin-bottom:6px; }
+.why-about-item p { font-size:17px; color:var(--muted); line-height:1.6; }
+
+@media (max-width: 768px) {
+  .about-main-inner { flex-direction:column; gap:40px; }
+  .about-main-visual { flex:none; width:100%; max-width:480px; }
+  .about-main-visual img { height:380px; }
+  .mvv-grid { grid-template-columns:1fr; gap:14px; margin-top:32px; }
+  .mvv-card { padding:22px 20px 20px; }
+  .mvv-icon { width:42px; height:42px; font-size:16px; margin-bottom:10px; }
+  .mvv-card h3 { font-size:20px; }
+  .mvv-card p { font-size:16px; line-height:1.6; margin-top:10px; }
+  .team-grid { grid-template-columns:1fr; }
+  .why-about-grid { grid-template-columns:1fr 1fr; }
+}
+@media (max-width: 480px) {
+  .why-about-grid { grid-template-columns:1fr; }
+}
+</style>
+<link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<a class="whatsapp-float" href="https://wa.me/918779292084" target="_blank" aria-label="Chat on WhatsApp">
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+</a>
+
+<div class="topbar">
+  <div class="topbar-left">
+    <div class="topbar-item">
+      <i class="fa-solid fa-phone"></i>
+      <a href="tel:+919423425900">+91 9423425900</a>
+    </div>
+    <div class="topbar-item">
+      <i class="fa-regular fa-envelope"></i>
+      <a href="mailto:blossomcounselingservice@gmail.com">blossomcounselingservice@gmail.com</a>
+    </div>
+  </div>
+  <div class="topbar-right">
+    <a href="https://instagram.com/" target="_blank" aria-label="Instagram" class="tb-ig"><i class="fa-brands fa-instagram"></i></a>
+    <a href="https://facebook.com/" target="_blank" aria-label="Facebook" class="tb-fb"><i class="fa-brands fa-facebook-f"></i></a>
+    <a href="https://youtube.com/" target="_blank" aria-label="YouTube" class="tb-yt"><i class="fa-brands fa-youtube"></i></a>
+    <a href="https://linkedin.com/" target="_blank" aria-label="LinkedIn" class="tb-in"><i class="fa-brands fa-linkedin-in"></i></a>
+  </div>
+</div>
+
+<nav class="navbar">
+  <a class="logo" href="index.html">
+    <div class="logo-icon">B</div>
+    <span class="logo-name">Blossom Counseling</span>
+  </a>
+  <div class="nav-center">
+    <p class="nav-tagline">Find the Right Path with Expert Counselling</p>
+    <ul class="nav-links">
+      <li><a class="nav-link" href="index.html">Home</a></li>
+      <li><a class="nav-link active" href="about.html">About Us</a></li>
+      <li class="nav-dropdown">
+        <a class="nav-link" href="services.html">Our Services <i class="fa-solid fa-chevron-down dd-chev"></i></a>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" href="services.html#children">Children Counseling</a>
+          <a class="dropdown-item" href="services.html#marriage">Marriage Counseling</a>
+          <a class="dropdown-item" href="services.html#senior">Senior Citizen Counseling</a>
+          <a class="dropdown-item" href="services.html#personal">Personal Counseling</a>
+          <a class="dropdown-item" href="services.html#relationship">Relationship Counseling</a>
+          <a class="dropdown-item" href="services.html#financial">Financial Counseling</a>
+          <a class="dropdown-item" href="services.html#stress">Stress &amp; Anxiety</a>
+          <a class="dropdown-item" href="services.html#depression">Depression Support</a>
+        </div>
+      </li>
+      <li><a class="nav-link" href="gallery.html">Gallery</a></li>
+      <li><a class="nav-link" href="blog.html">Blog</a></li>
+      <li><a class="nav-link" href="contact.html">Contact Us</a></li>
+    </ul>
+  </div>
+  <a class="nav-btn" href="contact.html">Book Appointment</a>
+  <div class="hamburger" id="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a class="mobile-nav-link" href="index.html">Home</a>
+  <a class="mobile-nav-link" href="about.html">About Us</a>
+  <button class="mobile-services-toggle" id="mobileServicesToggle" onclick="toggleMobileServices()">
+    Our Services
+    <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+  </button>
+  <div class="mobile-sub" id="mobileServicesSub">
+    <a class="mobile-nav-link" href="services.html#children">Children Counseling</a>
+    <a class="mobile-nav-link" href="services.html#marriage">Marriage Counseling</a>
+    <a class="mobile-nav-link" href="services.html#senior">Senior Citizen Counseling</a>
+    <a class="mobile-nav-link" href="services.html#personal">Personal Counseling</a>
+    <a class="mobile-nav-link" href="services.html#relationship">Relationship Counseling</a>
+    <a class="mobile-nav-link" href="services.html#financial">Financial Counseling</a>
+    <a class="mobile-nav-link" href="services.html#stress">Stress &amp; Anxiety</a>
+    <a class="mobile-nav-link" href="services.html#depression">Depression Support</a>
+  </div>
+  <a class="mobile-nav-link" href="gallery.html">Gallery</a>
+  <a class="mobile-nav-link" href="blog.html">Blog</a>
+  <a class="mobile-nav-link" href="contact.html">Contact Us</a>
+  <a class="mobile-book-btn" href="contact.html">Book an Appointment</a>
+</div>
+
+<section class="about-page-hero">
+  <div class="about-hero-text">
+    <div class="breadcrumb"><a href="index.html">Home</a> <i class="fa-solid fa-chevron-right"></i> <span>About Us</span></div>
+    <span class="about-hero-eyebrow">About Blossom Counseling</span>
+    <h1>Blossom <em>Counseling</em></h1>
+    <p>We are a team of certified, compassionate counsellors dedicated to helping individuals, couples, and families navigate life's challenges with confidence and care.</p>
+    <div class="about-hero-btns">
+      <a class="hb-solid" href="contact.html"><i class="fa-solid fa-calendar-check"></i> Book Appointment</a>
+      <a class="hb-ghost" href="services.html"><i class="fa-solid fa-hand-holding-heart"></i> Our Services</a>
+    </div>
+  </div>
+  <svg class="about-hero-wave" viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true"><path fill="#ffffff" d="M0,70 C240,130 480,130 720,80 C960,30 1200,20 1440,70 L1440,120 L0,120 Z"/></svg>
+</section>
+
+<section class="about-main">
+  <div class="about-main-inner">
+    <div class="about-main-visual reveal from-left">
+      <div class="about-img-frame">
+        <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=800&auto=format&fit=crop&q=70" alt="Counselling session at Blossom Counseling">
+      </div>
+      <div class="about-exp-badge"><strong>8+</strong><span>Years of Care</span></div>
+    </div>
+    <div class="about-main-text reveal from-right">
+      <div class="section-tag">Best Counseling Centre in Amravati</div>
+      <h2 class="section-title">Welcome to Blossom Counseling</h2>
+      <p>Welcome to <strong>Blossom Counseling</strong> — where every journey toward growth, healing, and clarity begins. We are a team of certified, compassionate counsellors dedicated to helping individuals, couples, and families navigate life's most challenging moments with confidence and care.</p>
+      <p>Whether you're a student feeling lost, a couple facing conflict, a professional battling burnout, or a senior seeking emotional support — <strong>we are here for you</strong>.</p>
+      <div class="about-highlight">
+        Our approach is warm, personalized, and completely confidential. From our centre in Kalyan to your doorstep through home visit counselling, we make professional support accessible to everyone — regardless of age, background, or circumstance.
+      </div>
+      <div class="about-checklist">
+        <div class="about-check"><div class="about-check-icon">✓</div><div class="about-check-text"><strong>Home Visit Available</strong> — Professional counselling right at your doorstep</div></div>
+        <div class="about-check"><div class="about-check-icon">✓</div><div class="about-check-text"><strong>Certified Counsellors</strong> — Trained, experienced, and compassionate</div></div>
+        <div class="about-check"><div class="about-check-icon">✓</div><div class="about-check-text"><strong>100% Confidential</strong> — Your privacy is our priority</div></div>
+        <div class="about-check"><div class="about-check-icon">✓</div><div class="about-check-text"><strong>All Age Groups</strong> — Children, adults, couples, and seniors</div></div>
+        <div class="about-check"><div class="about-check-icon">✓</div><div class="about-check-text"><strong>Guidance for Better Job Opportunities</strong> — Career counselling included</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="info-strip">
+  <div class="info-item">
+    <div class="info-icon"><i class="fa-solid fa-clock"></i></div>
+    <div class="info-body">
+      <h4>Open Hours</h4>
+      <p class="info-time"><b>Mon–Sat</b> 8:30 AM – 9:30 PM</p>
+      <p class="info-time"><b>Sunday</b> 10:00 AM – 8:00 PM</p>
+    </div>
+  </div>
+  <div class="info-item">
+    <div class="info-icon"><i class="fa-solid fa-calendar-check"></i></div>
+    <div class="info-body">
+      <h4>Schedule Appointment</h4>
+      <p>Appointments are available, book an appointment</p>
+      <a class="info-btn" href="contact.html">Book Now <i class="fa-solid fa-arrow-right"></i></a>
+    </div>
+  </div>
+  <div class="info-item">
+    <div class="info-icon"><i class="fa-solid fa-phone-volume"></i></div>
+    <div class="info-body">
+      <h4>Call Us On</h4>
+      <a class="info-call" href="tel:+918779292084">+91 8779292084</a>
+      <a class="info-call" href="tel:+917744896101">+91 7744896101</a>
+    </div>
+  </div>
+</div>
+
+<section class="mvv-section">
+  <div class="section-center reveal">
+    <div class="section-tag">What Drives Us</div>
+    <h2 class="section-title">Our Mission, Vision &amp; Values</h2>
+  </div>
+  <div class="mvv-grid">
+    <div class="mvv-card reveal" data-num="01"><div class="mvv-icon"><i class="fa-solid fa-bullseye"></i></div><h3>Our Mission</h3><p>To empower every individual with the tools, skills, and guidance needed to achieve their personal and professional goals through creative, compassionate, and comprehensive support.</p></div>
+    <div class="mvv-card reveal" data-num="02" style="transition-delay:0.1s"><div class="mvv-icon"><i class="fa-solid fa-eye"></i></div><h3>Our Vision</h3><p>To be India's most trusted centre for holistic creative and personal development — where every person discovers their potential and lives with purpose, confidence, and joy.</p></div>
+    <div class="mvv-card reveal" data-num="03" style="transition-delay:0.2s"><div class="mvv-icon"><i class="fa-solid fa-gem"></i></div><h3>Our Values</h3><p>Compassion, integrity, innovation, and inclusivity. We believe in treating every individual with respect and providing personalized care tailored to their unique journey.</p></div>
+  </div>
+</section>
+
+<section class="why-about">
+  <div class="section-center reveal">
+    <div class="section-tag">Why Choose Us</div>
+    <h2 class="section-title">Why Blossom Counseling?</h2>
+  </div>
+  <div class="why-about-grid">
+    <div class="why-about-item reveal"><div class="why-about-icon"><i class="fa-solid fa-award"></i></div><h5>Expert Career Counsellors</h5><p>Certified professionals with proven expertise in guiding careers.</p></div>
+    <div class="why-about-item reveal" style="transition-delay:0.1s"><div class="why-about-icon"><i class="fa-solid fa-clipboard-list"></i></div><h5>Comprehensive Planning</h5><p>Holistic personal and career development plans tailored for you.</p></div>
+    <div class="why-about-item reveal" style="transition-delay:0.2s"><div class="why-about-icon"><i class="fa-solid fa-chart-line"></i></div><h5>Proven Track Record</h5><p>Hundreds of successful transformations across all age groups.</p></div>
+    <div class="why-about-item reveal" style="transition-delay:0.3s"><div class="why-about-icon"><i class="fa-solid fa-graduation-cap"></i></div><h5>Workshops &amp; Skill Dev</h5><p>Regular workshops for communication, confidence, and growth.</p></div>
+    <div class="why-about-item reveal"><div class="why-about-icon"><i class="fa-solid fa-heart"></i></div><h5>Psychological Support</h5><p>Emotional and psychological guidance with empathy and care.</p></div>
+    <div class="why-about-item reveal" style="transition-delay:0.1s"><div class="why-about-icon"><i class="fa-solid fa-people-roof"></i></div><h5>All Age Groups</h5><p>Personalized guidance for children, adults, couples, and seniors.</p></div>
+    <div class="why-about-item reveal" style="transition-delay:0.2s"><div class="why-about-icon"><i class="fa-solid fa-lock"></i></div><h5>Safe &amp; Confidential</h5><p>A nurturing, judgment-free space where you can open up freely.</p></div>
+    <div class="why-about-item reveal" style="transition-delay:0.3s"><div class="why-about-icon"><i class="fa-solid fa-house-chimney"></i></div><h5>Home Visit Service</h5><p>We come to you for those who prefer counselling at home.</p></div>
+  </div>
+</section>
+
+<section class="cta-banner">
+  <span class="cta-eyebrow"><i class="fa-solid fa-heart"></i> Your Journey Starts Here</span>
+  <h2>Book a Session Today &amp;<br>Start Changing Your Life!</h2>
+  <p>Take the first step towards a brighter, more fulfilling future. Our counsellors are ready to guide you.</p>
+  <div class="cta-banner-btns">
+    <a class="btn-white" href="contact.html">Book an Appointment</a>
+    <a class="btn-white-outline" href="tel:+918779292084">Call Us Now</a>
+  </div>
+  <ul class="cta-points">
+    <li><i class="fa-solid fa-shield-heart"></i> 100% Confidential</li>
+    <li><i class="fa-solid fa-user-doctor"></i> Caring Counsellors</li>
+    <li><i class="fa-solid fa-clock"></i> Reply within 24 hours</li>
+  </ul>
+</section>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="logo">
+        <div class="logo-icon">B</div>
+        <div class="logo-text">
+          <span class="logo-name">Blossom Counseling</span>
+          <span class="logo-sub">Amravati</span>
+        </div>
+      </div>
+      <p class="footer-about">A trusted name in counselling. We help individuals unlock their full potential through expert guidance, skill development, and personalized support.</p>
+      <div class="footer-contact-item">📍 Shop No 9, 1st Floor, Seasons Harmony, Khadakpada, Kalyan, MH 421301</div>
+    </div>
+    <div class="footer-col">
+      <h4>Our Services</h4>
+      <ul>
+        <li><a href="services.html#children">Children Counseling</a></li>
+        <li><a href="services.html#marriage">Marriage Counseling</a></li>
+        <li><a href="services.html#senior">Senior Citizen</a></li>
+        <li><a href="services.html#personal">Personal Counseling</a></li>
+        <li><a href="services.html#relationship">Relationship Counseling</a></li>
+        <li><a href="services.html#financial">Financial Counseling</a></li>
+        <li><a href="services.html#stress">Stress &amp; Anxiety</a></li>
+        <li><a href="services.html#depression">Depression Support</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+        <li><a href="contact.html">Book Appointment</a></li>
+        <li><a href="privacy.html">Privacy Policy</a></li>
+        <li><a href="terms.html">Terms &amp; Conditions</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact Us</h4>
+      <ul>
+        <li class="footer-contact-link"><i class="fa-solid fa-phone"></i><a href="tel:+919423425900">+91 9423425900</a></li>
+        <li class="footer-contact-link"><i class="fa-regular fa-envelope"></i><a href="mailto:blossomcounselingservice@gmail.com">blossomcounselingservice@gmail.com</a></li>
+        <li class="footer-contact-link"><i class="fa-brands fa-whatsapp"></i><a href="https://wa.me/918779292084" target="_blank">WhatsApp Us</a></li>
+</ul>
+      <div class="footer-socials">
+        <a href="https://facebook.com/" target="_blank" aria-label="Facebook" class="fs-fb"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="https://instagram.com/" target="_blank" aria-label="Instagram" class="fs-ig"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://wa.me/918779292084" target="_blank" aria-label="WhatsApp" class="fs-wa"><i class="fa-brands fa-whatsapp"></i></a>
+        <a href="https://twitter.com/" target="_blank" aria-label="X" class="fs-x"><i class="fa-brands fa-x-twitter"></i></a>
+        <a href="https://linkedin.com/" target="_blank" aria-label="LinkedIn" class="fs-in"><i class="fa-brands fa-linkedin-in"></i></a>
+        <a href="https://youtube.com/" target="_blank" aria-label="YouTube" class="fs-yt"><i class="fa-brands fa-youtube"></i></a>
+      </div>      <div class="footer-map">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3767.5!2d73.1285!3d19.2403!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7952b5a5a5a5a%3A0x5a5a5a5a5a5a5a5a!2sSeasons%20Harmony%2C%20Khadakpada%2C%20Kalyan%2C%20Maharashtra%20421301!5e0!3m2!1sen!2sin!4v1" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Blossom Counseling Location"></iframe>
+      </div>
+    </div>
+  </div>
+  <hr class="footer-divider">
+  <div class="footer-bottom">
+    <span>Copyrights © 2026 Blossom Counseling. All Rights Reserved.</span>
+    <span class="footer-bottom-right">Developed &amp; Managed by <a href="https://tejasmehar.in" target="_blank" rel="noopener">Tejas Mehar</a></span>
+  </div>
+</footer>
+
+<script>
+function toggleMenu() {
+  document.getElementById('hamburger').classList.toggle('open');
+  document.getElementById('mobileMenu').classList.toggle('open');
+  syncMenuTop();
+}
+function syncMenuTop() {
+  var nav = document.querySelector('.navbar'), m = document.getElementById('mobileMenu');
+  if (nav && m) m.style.top = Math.max(0, nav.getBoundingClientRect().bottom) + 'px';
+}
+window.addEventListener('scroll', syncMenuTop, {passive:true});
+window.addEventListener('resize', syncMenuTop);
+</script>
+<script>
+(function(){
+  var c=document.querySelector('.cta-banner'); if(!c||!('IntersectionObserver' in window)) return;
+  c.classList.add('cta-anim');
+  new IntersectionObserver(function(e,o){ e.forEach(function(x){ if(x.isIntersecting){ c.classList.add('cta-in'); o.disconnect(); } }); },{threshold:0.25}).observe(c);
+})();
+</script>
+<script>
+// Scroll reveal (same .reveal system used on the Home page)
+(function(){
+  var els=document.querySelectorAll('.reveal'); if(!els.length) return;
+  if(!('IntersectionObserver' in window)||window.matchMedia('(prefers-reduced-motion: reduce)').matches){ els.forEach(function(e){e.classList.add('visible');}); return; }
+  var io=new IntersectionObserver(function(entries){ entries.forEach(function(en){ if(en.isIntersecting){ var t=en.target; t.classList.add('visible'); io.unobserve(t);
+    setTimeout(function(){ t.classList.remove('reveal','visible','from-left','from-right'); t.style.transitionDelay=''; }, 1500); } }); },{threshold:0.12});
+  els.forEach(function(e){ io.observe(e); });
+})();
+</script>
+</body>
+</html>

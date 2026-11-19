@@ -1,0 +1,537 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Us – Blossom Counseling</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500;600&family=Rubik:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="style.css">
+<style>
+/* ===== CONTACT PAGE ===== */
+.contact-hero { padding: 48px 5% 36px; background:linear-gradient(135deg, #dcdaf6 0%, #e6e5f9 60%, #eeedfb 100%); }
+.contact-hero .contact-cta { margin-bottom:0; }
+.contact-main { padding: 56px 5% 56px; background:var(--white); }
+.contact-wrap { max-width:1200px; margin:0 auto; }
+.contact-head { text-align:center; max-width:640px; margin:0 auto 20px; }
+.contact-head .eyebrow { display:inline-block; font-size:14px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:var(--primary); margin-bottom:10px; }
+.contact-head h1 { font-family:var(--font-display); font-size:clamp(30px,4vw,44px); font-weight:700; color:var(--text); line-height:1.2; margin-bottom:12px; }
+.contact-head h1 em { font-style:normal; color:var(--primary); }
+.contact-head p { font-size:17px; color:var(--muted); line-height:1.7; }
+
+/* Info cards row */
+.contact-cards { display:grid; grid-template-columns:repeat(4,1fr); gap:18px; margin-bottom:36px; }
+.cc-card {
+  display:flex; flex-direction:column; align-items:center; text-align:center; gap:10px;
+  padding:26px 18px; background:var(--white); border:1px solid var(--border);
+  border-radius:16px; box-shadow:0 2px 14px rgba(90,92,184,0.06);
+  transition:transform .25s, box-shadow .25s, border-color .25s;
+}
+.cc-card:hover { transform:translateY(-4px); box-shadow:0 10px 28px rgba(90,92,184,0.14); border-color:var(--primary-mid); }
+.cc-icon { width:52px; height:52px; border-radius:14px; background:var(--primary-dark); color:#fff; display:flex; align-items:center; justify-content:center; font-size:21px; }
+.cc-label { font-size:14px; font-weight:700; color:var(--light-muted); text-transform:uppercase; letter-spacing:1px; }
+.cc-val { font-size:17px; color:var(--text); font-weight:500; line-height:1.6; word-break:break-word; }
+.cc-val a { color:var(--text); transition:color var(--transition); display:block; }
+.cc-val a:hover { color:var(--primary); }
+
+/* Two-column: form + side */
+.contact-grid { scroll-margin-top:90px; display:grid; grid-template-columns:1.15fr 1fr; gap:32px; align-items:stretch; }
+.contact-side { display:flex; flex-direction:column; gap:24px; }
+
+.contact-hours-card {
+  background:var(--warm); border:1px solid var(--border);
+  border-radius:16px; padding:24px 26px;
+}
+.contact-hours-card h4 { font-size:18px; font-weight:700; color:var(--text); display:flex; align-items:center; gap:10px; margin-bottom:12px; }
+.contact-hours-card h4 i { color:var(--primary); }
+.hours-row-new { display:flex; justify-content:space-between; align-items:center; gap:10px; padding:11px 0; border-bottom:1px solid var(--border); font-size:17px; }
+.hours-row-new:last-child { border:none; padding-bottom:0; }
+.hours-day-new { color:var(--muted); }
+.hours-time-new { font-weight:600; color:var(--text); }
+.hours-badge { font-size:14px; font-weight:700; color:white; background:var(--primary); padding:2px 10px; border-radius:50px; text-transform:uppercase; letter-spacing:0.5px; }
+
+.contact-social-card {
+  display:flex; align-items:center; justify-content:space-between; gap:14px; flex-wrap:wrap;
+  border:1px solid var(--border); border-radius:16px; padding:18px 26px;
+}
+.contact-social-card strong { font-size:17px; color:var(--text); }
+.contact-social { display:flex; gap:10px; }
+.social-btn {
+  width:42px; height:42px; border-radius:10px; background:var(--warm); border:1px solid var(--border);
+  display:flex; align-items:center; justify-content:center; color:var(--primary-dark); font-size:17px;
+  transition:all var(--transition); text-decoration:none;
+}
+.social-btn:hover { background:var(--primary-dark); color:#fff; border-color:var(--primary-dark); }
+
+.contact-info-card { flex:1; display:flex; flex-direction:column; gap:14px; border:1px solid var(--border); border-radius:18px; padding:22px 26px; background:var(--white); box-shadow:0 4px 28px rgba(90,92,184,0.10); }
+.ci-title { font-family:var(--font-display); font-size:22px; font-weight:600; color:var(--text); margin:0; }
+.cd-item { display:flex; align-items:flex-start; gap:14px; }
+.cd-item .cc-icon { flex-shrink:0; width:40px; height:40px; font-size:16px; border-radius:10px; }
+.cd-item .cc-label { margin-bottom:2px; font-size:13px; }
+.cd-item .cc-val { font-size:16px; line-height:1.5; }
+.ci-hours .hours-row-new { padding:3px 0; border:none; font-size:16px; }
+.ci-divider { height:1px; background:var(--border); }
+.ci-hours { flex:1; }
+.ci-follow { display:flex; align-items:center; justify-content:space-between; gap:14px; flex-wrap:wrap; }
+.ci-follow strong { font-size:17px; color:var(--text); }
+.social-btn.sb-fb { background:#1877f2; color:#fff; border-color:#1877f2; }
+.social-btn.sb-ig { background:linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888); color:#fff; border-color:transparent; }
+.social-btn.sb-wa { background:#25d366; color:#fff; border-color:#25d366; }
+.social-btn.sb-yt { background:#ff0000; color:#fff; border-color:#ff0000; }
+.social-btn.sb-fb:hover,.social-btn.sb-ig:hover,.social-btn.sb-wa:hover,.social-btn.sb-yt:hover { color:#fff; filter:brightness(1.1); transform:translateY(-3px); }
+
+/* Hero CTA buttons */
+.contact-cta { display:flex; justify-content:center; flex-wrap:wrap; gap:14px; margin:0 0 24px; }
+.cta-btn { display:inline-flex; align-items:center; gap:10px; padding:11px 24px; border-radius:50px; font-size:16px; font-weight:600; text-decoration:none; transition:all .25s; border:2px solid var(--primary-dark); }
+.cta-btn.primary { background:var(--primary-dark); color:#fff; box-shadow:0 6px 18px rgba(90,92,184,0.3); }
+.cta-btn.primary:hover { transform:translateY(-2px); box-shadow:0 10px 24px rgba(90,92,184,0.4); }
+.cta-btn.outline { background:transparent; color:var(--primary-dark); }
+.cta-btn.outline:hover { background:var(--primary-dark); color:#fff; transform:translateY(-2px); }
+
+/* Form card */
+.contact-form-card {
+  background:var(--white); border:1px solid var(--border);
+  border-radius:18px; padding:24px 30px;
+  box-shadow:0 4px 32px rgba(90,92,184,0.08);
+}
+.contact-form-card-title { font-family:var(--font-display); font-size:24px; font-weight:600; color:var(--text); margin-bottom:4px; display:flex; align-items:center; gap:10px; }
+.contact-form-card-title i { color:var(--primary); }
+.contact-form-card-sub { font-size:16px; color:var(--muted); margin-bottom:14px; }
+.form-row { display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-bottom:10px; }
+.form-grp { margin-bottom:10px; }
+.form-lbl { display:block; font-size:14px; font-weight:700; color:var(--text); margin-bottom:4px; letter-spacing:0.3px; text-transform:uppercase; }
+.form-inp, .form-sel, .form-txta {
+  width:100%; padding:9px 14px;
+  border:1.5px solid var(--border); border-radius:var(--radius-sm);
+  font-size:17px; font-family:var(--font-body); color:var(--text);
+  background:var(--white); outline:none; transition:border-color var(--transition);
+  appearance:none; -webkit-appearance:none;
+}
+.form-sel {
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' fill='none' stroke='%236f73d2' stroke-width='2.5' viewBox='0 0 24 24'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+  background-repeat:no-repeat; background-position:right 14px center; padding-right:40px;
+}
+.form-inp:focus, .form-sel:focus, .form-txta:focus { border-color:var(--primary); box-shadow:0 0 0 3px rgba(111,115,210,0.12); }
+.form-inp::placeholder, .form-txta::placeholder { color:var(--light-muted); }
+.form-txta { height:70px; resize:vertical; }
+.form-btn {
+  width:100%; padding:12px; background:var(--primary-dark); color:white;
+  border:none; border-radius:var(--radius-sm); font-size:17px; font-weight:600; font-family:var(--font-body);
+  cursor:pointer; transition:all var(--transition); margin-top:4px; letter-spacing:0.3px;
+}
+.form-btn:hover { background:var(--primary); transform:translateY(-2px); box-shadow:0 6px 20px rgba(90,92,184,0.3); }
+.form-success-box { display:none; text-align:center; padding:32px 16px; }
+.form-success-box .icon { font-size:52px; margin-bottom:14px; }
+.form-success-box h3 { font-family:var(--font-display); font-size:22px; color:var(--text); margin-bottom:8px; }
+.form-success-box p { font-size:17px; color:var(--muted); line-height:1.7; }
+
+@media (max-width:1024px) {
+  .contact-cards { grid-template-columns:repeat(2,1fr); }
+  .contact-grid { grid-template-columns:1fr; }
+}
+@media (max-width:600px) {
+  .contact-hero { padding:36px 4% 28px; }
+  .contact-cta { flex-wrap:nowrap; gap:8px; }
+  .cta-btn { flex:1 1 0; min-width:0; justify-content:center; gap:6px; padding:10px 8px; font-size:14px; white-space:nowrap; }
+  #booking-form { scroll-margin-top:90px; }
+  .contact-main { padding:40px 4% 56px; }
+  .contact-cards { grid-template-columns:1fr; }
+  .form-row { grid-template-columns:1fr; gap:0; }
+  .form-row > div { margin-bottom:16px; }
+  .contact-form-card { padding:24px 20px; }
+}
+</style>
+<link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<a class="whatsapp-float" href="https://wa.me/918779292084" target="_blank" aria-label="Chat on WhatsApp">
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+</a>
+
+<div class="topbar">
+  <div class="topbar-left">
+    <div class="topbar-item">
+      <i class="fa-solid fa-phone"></i>
+      <a href="tel:+919423425900">+91 9423425900</a>
+    </div>
+    <div class="topbar-item">
+      <i class="fa-regular fa-envelope"></i>
+      <a href="mailto:blossomcounselingservice@gmail.com">blossomcounselingservice@gmail.com</a>
+    </div>
+  </div>
+  <div class="topbar-right">
+    <a href="https://instagram.com/" target="_blank" aria-label="Instagram" class="tb-ig"><i class="fa-brands fa-instagram"></i></a>
+    <a href="https://facebook.com/" target="_blank" aria-label="Facebook" class="tb-fb"><i class="fa-brands fa-facebook-f"></i></a>
+    <a href="https://youtube.com/" target="_blank" aria-label="YouTube" class="tb-yt"><i class="fa-brands fa-youtube"></i></a>
+    <a href="https://linkedin.com/" target="_blank" aria-label="LinkedIn" class="tb-in"><i class="fa-brands fa-linkedin-in"></i></a>
+  </div>
+</div>
+
+<nav class="navbar">
+  <a class="logo" href="index.html">
+    <div class="logo-icon">B</div>
+    <span class="logo-name">Blossom Counseling</span>
+  </a>
+  <div class="nav-center">
+    <p class="nav-tagline">Find the Right Path with Expert Counselling</p>
+    <ul class="nav-links">
+      <li><a class="nav-link" href="index.html">Home</a></li>
+      <li><a class="nav-link" href="about.html">About Us</a></li>
+      <li class="nav-dropdown">
+        <a class="nav-link" href="services.html">Our Services <i class="fa-solid fa-chevron-down dd-chev"></i></a>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" href="services.html#children">Children Counseling</a>
+          <a class="dropdown-item" href="services.html#marriage">Marriage Counseling</a>
+          <a class="dropdown-item" href="services.html#senior">Senior Citizen Counseling</a>
+          <a class="dropdown-item" href="services.html#personal">Personal Counseling</a>
+          <a class="dropdown-item" href="services.html#relationship">Relationship Counseling</a>
+          <a class="dropdown-item" href="services.html#financial">Financial Counseling</a>
+          <a class="dropdown-item" href="services.html#stress">Stress &amp; Anxiety</a>
+          <a class="dropdown-item" href="services.html#depression">Depression Support</a>
+        </div>
+      </li>
+      <li><a class="nav-link" href="gallery.html">Gallery</a></li>
+      <li><a class="nav-link" href="blog.html">Blog</a></li>
+      <li><a class="nav-link active" href="contact.html">Contact Us</a></li>
+    </ul>
+  </div>
+  <a class="nav-btn" href="contact.html">Book Appointment</a>
+  <div class="hamburger" id="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a class="mobile-nav-link" href="index.html">Home</a>
+  <a class="mobile-nav-link" href="about.html">About Us</a>
+  <button class="mobile-services-toggle" id="mobileServicesToggle" onclick="toggleMobileServices()">
+    Our Services
+    <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+  </button>
+  <div class="mobile-sub" id="mobileServicesSub">
+    <a class="mobile-nav-link" href="services.html#children">Children Counseling</a>
+    <a class="mobile-nav-link" href="services.html#marriage">Marriage Counseling</a>
+    <a class="mobile-nav-link" href="services.html#senior">Senior Citizen Counseling</a>
+    <a class="mobile-nav-link" href="services.html#personal">Personal Counseling</a>
+    <a class="mobile-nav-link" href="services.html#relationship">Relationship Counseling</a>
+    <a class="mobile-nav-link" href="services.html#financial">Financial Counseling</a>
+    <a class="mobile-nav-link" href="services.html#stress">Stress &amp; Anxiety</a>
+    <a class="mobile-nav-link" href="services.html#depression">Depression Support</a>
+  </div>
+  <a class="mobile-nav-link" href="gallery.html">Gallery</a>
+  <a class="mobile-nav-link" href="blog.html">Blog</a>
+  <a class="mobile-nav-link" href="contact.html">Contact Us</a>
+  <a class="mobile-book-btn" href="contact.html">Book an Appointment</a>
+</div>
+
+<!-- CONTACT MAIN -->
+<section class="contact-hero">
+  <div class="contact-wrap">
+
+    <div class="contact-head">
+      <span class="eyebrow">Get In Touch</span>
+      <h1>Let's <em>Talk</em> &amp; Heal Together</h1>
+      <p>Our expert counsellors are just one message away. Take the first step — reach out today.</p>
+    </div>
+
+    <div class="contact-cta">
+      <a class="cta-btn primary" href="#booking-form"><i class="fa-regular fa-calendar-check"></i> Book Appointment</a>
+      <a class="cta-btn outline" href="services.html"><i class="fa-solid fa-hand-holding-heart"></i> Our Services</a>
+    </div>
+
+  </div>
+</section>
+
+<section class="contact-main">
+  <div class="contact-wrap">
+
+    <div class="contact-grid" id="booking-form">
+
+      <!-- Form -->
+      <div class="contact-form-card">
+        <div id="contactFormContent">
+          <div class="contact-form-card-title"><i class="fa-regular fa-calendar-check"></i> Book an Appointment</div>
+          <div class="contact-form-card-sub">Fill in the details below — we'll contact you within 24 hours.</div>
+          <div class="form-row">
+            <div>
+              <label class="form-lbl">Full Name</label>
+              <input type="text" class="form-inp" placeholder="Your full name">
+            </div>
+            <div>
+              <label class="form-lbl">Phone Number</label>
+              <input type="tel" class="form-inp" placeholder="+91 XXXXX XXXXX">
+            </div>
+          </div>
+          <div class="form-grp">
+            <label class="form-lbl">Email Address</label>
+            <input type="email" class="form-inp" placeholder="email@example.com">
+          </div>
+          <div class="form-row">
+            <div>
+              <label class="form-lbl">Select Service</label>
+              <select class="form-sel">
+                <option value="">Choose a service...</option>
+                <option>Children Counseling</option>
+                <option>Marriage Counseling</option>
+                <option>Senior Citizen Counseling</option>
+                <option>Personal Counseling</option>
+                <option>Relationship Counseling</option>
+                <option>Financial Counseling</option>
+                <option>Stress and Anxiety Management</option>
+                <option>Depression Support</option>
+              </select>
+            </div>
+            <div>
+              <label class="form-lbl">Appointment Type</label>
+              <select class="form-sel">
+                <option value="">Choose type...</option>
+                <option>Home Visit</option>
+                <option>School &amp; College Visit</option>
+                <option>Office Visit</option>
+                <option>Centre Visit</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-grp">
+            <label class="form-lbl">Message (Optional)</label>
+            <textarea class="form-txta" placeholder="Tell us about your concern..."></textarea>
+          </div>
+          <button class="form-btn" onclick="submitContactForm()">Book Appointment Now</button>
+        </div>
+        <div class="form-success-box" id="contactFormSuccess">
+          <div class="icon">🙏</div>
+          <h3>Thank You!</h3>
+          <p>Your appointment request has been received.<br>Our team will contact you within <strong>24 hours</strong>.</p>
+          <button class="btn-outline" style="margin-top:20px;font-size:13px" onclick="resetContactForm()">Book Another →</button>
+        </div>
+      </div>
+
+      <!-- Side: one combined card -->
+      <div class="contact-side">
+        <div class="contact-info-card">
+          <h3 class="ci-title">Contact Information</h3>
+
+          <div class="cd-item">
+            <div class="cc-icon"><i class="fa-solid fa-location-dot"></i></div>
+            <div>
+              <div class="cc-label">Our Address</div>
+              <div class="cc-val">Shop No 9, 1st floor, Seasons Harmony, behind Ahir Auto, Khadakpada, Kalyan, Maharashtra 421301</div>
+            </div>
+          </div>
+          <div class="cd-item">
+            <div class="cc-icon"><i class="fa-solid fa-phone"></i></div>
+            <div>
+              <div class="cc-label">Call Us</div>
+              <div class="cc-val">
+                <a href="tel:+918779292084">+91 8779292084</a>
+                <a href="tel:+917744896101">+91 7744896101</a>
+              </div>
+            </div>
+          </div>
+          <div class="cd-item">
+            <div class="cc-icon"><i class="fa-regular fa-envelope"></i></div>
+            <div>
+              <div class="cc-label">Email Us</div>
+              <div class="cc-val"><a href="mailto:cdcareeracademy@gmail.com">cdcareeracademy@gmail.com</a></div>
+            </div>
+          </div>
+          <div class="cd-item">
+            <div class="cc-icon"><i class="fa-brands fa-whatsapp"></i></div>
+            <div>
+              <div class="cc-label">WhatsApp</div>
+              <div class="cc-val"><a href="https://wa.me/918779292084" target="_blank" rel="noopener">Chat with us &rarr;</a></div>
+            </div>
+          </div>
+
+          <div class="ci-divider"></div>
+
+          <div class="cd-item">
+            <div class="cc-icon"><i class="fa-regular fa-clock"></i></div>
+            <div class="ci-hours">
+              <div class="cc-label">Working Hours</div>
+              <div class="hours-row-new"><span class="hours-day-new">Mon – Sat</span><span class="hours-time-new">8:30 AM – 9:30 PM</span></div>
+              <div class="hours-row-new"><span class="hours-day-new">Sunday</span><span class="hours-time-new">10:00 AM – 8:00 PM</span></div>
+            </div>
+          </div>
+
+          <div class="ci-divider"></div>
+
+          <div class="ci-follow">
+            <strong>Follow Us</strong>
+            <div class="contact-social">
+              <a class="social-btn sb-fb" href="https://facebook.com/" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+              <a class="social-btn sb-ig" href="https://instagram.com/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+              <a class="social-btn sb-wa" href="https://wa.me/918779292084" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+              <a class="social-btn sb-yt" href="https://youtube.com/" target="_blank" rel="noopener" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="cta-banner">
+  <span class="cta-eyebrow"><i class="fa-solid fa-heart"></i> Your Journey Starts Here</span>
+  <h2>Book a Session Today &amp;<br>Start Changing Your Life!</h2>
+  <p>Take the first step towards a brighter, more fulfilling future. Our counsellors are ready to guide you.</p>
+  <div class="cta-banner-btns">
+    <a class="btn-white" href="contact.html">Book an Appointment</a>
+    <a class="btn-white-outline" href="tel:+918779292084">Call Us Now</a>
+  </div>
+  <ul class="cta-points">
+    <li><i class="fa-solid fa-shield-heart"></i> 100% Confidential</li>
+    <li><i class="fa-solid fa-user-doctor"></i> Caring Counsellors</li>
+    <li><i class="fa-solid fa-clock"></i> Reply within 24 hours</li>
+  </ul>
+</section>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="logo">
+        <div class="logo-icon">B</div>
+        <div class="logo-text">
+          <span class="logo-name">Blossom Counseling</span>
+          <span class="logo-sub">Amravati</span>
+        </div>
+      </div>
+      <p class="footer-about">A trusted name in counselling. We help individuals unlock their full potential through expert guidance, skill development, and personalized support.</p>
+      <div class="footer-contact-item">📍 Shop No 9, 1st Floor, Seasons Harmony, Khadakpada, Kalyan, MH 421301</div>
+    </div>
+    <div class="footer-col">
+      <h4>Our Services</h4>
+      <ul>
+        <li><a href="services.html#children">Children Counseling</a></li>
+        <li><a href="services.html#marriage">Marriage Counseling</a></li>
+        <li><a href="services.html#senior">Senior Citizen</a></li>
+        <li><a href="services.html#personal">Personal Counseling</a></li>
+        <li><a href="services.html#relationship">Relationship Counseling</a></li>
+        <li><a href="services.html#financial">Financial Counseling</a></li>
+        <li><a href="services.html#stress">Stress &amp; Anxiety</a></li>
+        <li><a href="services.html#depression">Depression Support</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+        <li><a href="contact.html">Book Appointment</a></li>
+        <li><a href="privacy.html">Privacy Policy</a></li>
+        <li><a href="terms.html">Terms &amp; Conditions</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact Us</h4>
+      <ul>
+        <li class="footer-contact-link"><i class="fa-solid fa-phone"></i><a href="tel:+919423425900">+91 9423425900</a></li>
+        <li class="footer-contact-link"><i class="fa-regular fa-envelope"></i><a href="mailto:blossomcounselingservice@gmail.com">blossomcounselingservice@gmail.com</a></li>
+        <li class="footer-contact-link"><i class="fa-brands fa-whatsapp"></i><a href="https://wa.me/918779292084" target="_blank">WhatsApp Us</a></li>
+</ul>
+      <div class="footer-socials">
+        <a href="https://facebook.com/" target="_blank" aria-label="Facebook" class="fs-fb"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="https://instagram.com/" target="_blank" aria-label="Instagram" class="fs-ig"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://wa.me/918779292084" target="_blank" aria-label="WhatsApp" class="fs-wa"><i class="fa-brands fa-whatsapp"></i></a>
+        <a href="https://twitter.com/" target="_blank" aria-label="X" class="fs-x"><i class="fa-brands fa-x-twitter"></i></a>
+        <a href="https://linkedin.com/" target="_blank" aria-label="LinkedIn" class="fs-in"><i class="fa-brands fa-linkedin-in"></i></a>
+        <a href="https://youtube.com/" target="_blank" aria-label="YouTube" class="fs-yt"><i class="fa-brands fa-youtube"></i></a>
+      </div>      <div class="footer-map">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3767.5!2d73.1285!3d19.2403!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7952b5a5a5a5a%3A0x5a5a5a5a5a5a5a5a!2sSeasons%20Harmony%2C%20Khadakpada%2C%20Kalyan%2C%20Maharashtra%20421301!5e0!3m2!1sen!2sin!4v1" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Blossom Counseling Location"></iframe>
+      </div>
+    </div>
+  </div>
+  <hr class="footer-divider">
+  <div class="footer-bottom">
+    <span>Copyrights © 2026 Blossom Counseling. All Rights Reserved.</span>
+    <span class="footer-bottom-right">Developed &amp; Managed by <a href="https://tejasmehar.in" target="_blank" rel="noopener">Tejas Mehar</a></span>
+  </div>
+</footer>
+
+<script>
+function toggleMenu() {
+  document.getElementById('hamburger').classList.toggle('open');
+  document.getElementById('mobileMenu').classList.toggle('open');
+  syncMenuTop();
+}
+function syncMenuTop() {
+  var nav = document.querySelector('.navbar'), m = document.getElementById('mobileMenu');
+  if (nav && m) m.style.top = Math.max(0, nav.getBoundingClientRect().bottom) + 'px';
+}
+window.addEventListener('scroll', syncMenuTop, {passive:true});
+window.addEventListener('resize', syncMenuTop);
+function toggleMobileServices() {
+  const toggle = document.getElementById('mobileServicesToggle');
+  const sub = document.getElementById('mobileServicesSub');
+  toggle.classList.toggle('open');
+  sub.classList.toggle('open');
+}
+/* Smooth scroll-reveal animations */
+(function () {
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduce || !('IntersectionObserver' in window)) return;
+
+  var st = document.createElement('style');
+  st.textContent =
+    '.sr{opacity:0;transform:translate3d(0,40px,0) scale(.98);will-change:opacity,transform;' +
+    'transition:opacity .8s cubic-bezier(.22,1,.36,1),transform .8s cubic-bezier(.22,1,.36,1)}' +
+    '.sr.sr-left{transform:translate3d(-140px,0,0);transition-duration:1.2s}' +
+    '.sr.sr-right{transform:translate3d(140px,0,0);transition-duration:1.2s}' +
+    '.contact-main{overflow-x:clip}' +
+    '.sr.sr-in{opacity:1;transform:none}';
+  document.head.appendChild(st);
+
+  var items = [];
+  function add(sel, cls, step, base) {
+    document.querySelectorAll(sel).forEach(function (el, i) {
+      el.classList.add('sr');
+      if (cls) el.classList.add(cls);
+      el._delay = (base || 0) + i * (step || 0);
+      items.push(el);
+    });
+  }
+
+  add('.contact-head .eyebrow', '', 0, 0);
+  add('.contact-head h1', '', 0, 100);
+  add('.contact-head p', '', 0, 200);
+  add('.contact-cta .cta-btn', '', 120, 300);
+  add('.contact-form-card', 'sr-left', 0, 0);
+  add('.contact-info-card', 'sr-right', 0, 250);
+  add('footer .footer-grid > *', '', 100, 0);
+
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (!e.isIntersecting) return;
+      var el = e.target;
+      el.style.transitionDelay = (el._delay || 0) + 'ms';
+      el.classList.add('sr-in');
+      io.unobserve(el);
+      setTimeout(function () { el.style.transitionDelay = ''; el.style.willChange = 'auto'; }, 1600 + (el._delay || 0));
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+
+  items.forEach(function (el) { io.observe(el); });
+})();
+
+function submitContactForm() {
+  document.getElementById('contactFormContent').style.display = 'none';
+  document.getElementById('contactFormSuccess').style.display = 'block';
+}
+function resetContactForm() {
+  document.getElementById('contactFormContent').style.display = 'block';
+  document.getElementById('contactFormSuccess').style.display = 'none';
+}
+</script>
+<script>
+(function(){
+  var c=document.querySelector('.cta-banner'); if(!c||!('IntersectionObserver' in window)) return;
+  c.classList.add('cta-anim');
+  new IntersectionObserver(function(e,o){ e.forEach(function(x){ if(x.isIntersecting){ c.classList.add('cta-in'); o.disconnect(); } }); },{threshold:0.25}).observe(c);
+})();
+</script>
+</body>
+</html>
