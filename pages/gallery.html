@@ -4,10 +4,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Gallery – Blossom Counseling</title>
+<title>Gallery – Blossom Counseling in Amravati | Our Counselling Centre</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500;600&family=Rubik:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="../style.css">
 <style>
 /* ===== GALLERY PAGE ===== */
 
@@ -45,6 +45,9 @@
 .gallery-item:hover { transform:scale(1.03); box-shadow:0 16px 40px rgba(90,92,184,0.2); }
 .gallery-item img { width:100%; height:100%; object-fit:cover; display:block; transition:transform 0.5s ease; }
 .gallery-item:hover img { transform:scale(1.08); }
+.gallery-cap { position:absolute; left:0; right:0; bottom:0; padding:28px 14px 12px; color:#fff; font-size:14px; font-weight:600; line-height:1.35; text-align:left; background:linear-gradient(to top, rgba(31,36,55,.85), rgba(31,36,55,0)); opacity:0; transform:translateY(8px); transition:opacity .3s ease, transform .3s ease; pointer-events:none; }
+.gallery-item:hover .gallery-cap, .gallery-item:focus-visible .gallery-cap { opacity:1; transform:none; }
+@media (hover:none) { .gallery-cap { opacity:1; transform:none; } }
 .gallery-view-more-wrap { width:100%; text-align:center; margin-top:40px; }
 .gallery-view-more { display:inline-flex; align-items:center; justify-content:center; gap:8px; padding:14px 38px; border-radius:50px; border:1.5px solid var(--primary); background:var(--white); color:var(--primary); font-size:16px; font-weight:600; font-family:var(--font-body); cursor:pointer; transition:all var(--transition); }
 .gallery-view-more:hover { background:var(--primary); color:#fff; transform:translateY(-2px); box-shadow:0 6px 20px rgba(90,92,184,0.25); }
@@ -114,7 +117,7 @@ footer { padding-left:6%; padding-right:6%; }
 </head>
 <body>
 
-<a class="whatsapp-float" href="https://wa.me/918779292084" target="_blank" aria-label="Chat on WhatsApp">
+<a class="whatsapp-float" href="https://wa.me/919423425900" target="_blank" aria-label="Chat on WhatsApp">
   <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
 </a>
 
@@ -130,22 +133,22 @@ footer { padding-left:6%; padding-right:6%; }
     </div>
   </div>
   <div class="topbar-right">
-    <a href="https://instagram.com/" target="_blank" aria-label="Instagram" class="tb-ig"><i class="fa-brands fa-instagram"></i></a>
-    <a href="https://facebook.com/" target="_blank" aria-label="Facebook" class="tb-fb"><i class="fa-brands fa-facebook-f"></i></a>
+    <a href="https://www.instagram.com/psychologist_nimisha" target="_blank" aria-label="Instagram" class="tb-ig"><i class="fa-brands fa-instagram"></i></a>
+    <a href="#" aria-label="Facebook" class="tb-fb"><i class="fa-brands fa-facebook-f"></i></a>
     <a href="https://youtube.com/" target="_blank" aria-label="YouTube" class="tb-yt"><i class="fa-brands fa-youtube"></i></a>
-    <a href="https://linkedin.com/" target="_blank" aria-label="LinkedIn" class="tb-in"><i class="fa-brands fa-linkedin-in"></i></a>
+    <a href="https://www.linkedin.com/in/nimishasaboo/" target="_blank" aria-label="LinkedIn" class="tb-in"><i class="fa-brands fa-linkedin-in"></i></a>
+    <a href="https://wa.me/919423425900" target="_blank" rel="noopener" aria-label="WhatsApp" class="tb-wa"><i class="fa-brands fa-whatsapp"></i></a>
   </div>
 </div>
 
 <nav class="navbar">
-  <a class="logo" href="index.html">
-    <div class="logo-icon">B</div>
-    <span class="logo-name">Blossom Counseling</span>
+  <a class="logo" href="../index.html">
+    <img class="logo-img" src="../public/logo.png" alt="Blossom Counseling Amravati">
   </a>
   <div class="nav-center">
     <p class="nav-tagline">Find the Right Path with Expert Counselling</p>
     <ul class="nav-links">
-      <li><a class="nav-link" href="index.html">Home</a></li>
+      <li><a class="nav-link" href="../index.html">Home</a></li>
       <li><a class="nav-link" href="about.html">About Us</a></li>
       <li class="nav-dropdown">
         <a class="nav-link" href="services.html">Our Services <i class="fa-solid fa-chevron-down dd-chev"></i></a>
@@ -170,7 +173,7 @@ footer { padding-left:6%; padding-right:6%; }
 </nav>
 
 <div class="mobile-menu" id="mobileMenu">
-  <a class="mobile-nav-link" href="index.html">Home</a>
+  <a class="mobile-nav-link" href="../index.html">Home</a>
   <a class="mobile-nav-link" href="about.html">About Us</a>
   <button class="mobile-services-toggle" id="mobileServicesToggle" onclick="toggleMobileServices()">
     Our Services
@@ -209,76 +212,76 @@ footer { padding-left:6%; padding-right:6%; }
   </div>
 
   <div class="gallery-grid" id="galleryGrid">
-    <div class="gallery-item reveal" data-cat="children" onclick="openLightbox(this)">
+    <div class="gallery-item reveal" data-cat="child" onclick="openLightbox(this)">
       <img src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=600&q=75" alt="Children Counseling Session" loading="lazy">
     </div>
-    <div class="gallery-item reveal" data-cat="marriage" onclick="openLightbox(this)" style="transition-delay:0.1s">
+    <div class="gallery-item reveal" data-cat="relationship" onclick="openLightbox(this)" style="transition-delay:0.1s">
       <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=600&q=75" alt="Marriage Counseling" loading="lazy">
     </div>
-    <div class="gallery-item reveal" data-cat="senior" onclick="openLightbox(this)" style="transition-delay:0.2s">
+    <div class="gallery-item reveal" data-cat="older" onclick="openLightbox(this)" style="transition-delay:0.2s">
       <img src="https://images.unsplash.com/photo-1581579438747-1dc8d17bbce4?w=600&q=75" alt="Senior Citizen Counseling" loading="lazy">
     </div>
-    <div class="gallery-item reveal" data-cat="personal" onclick="openLightbox(this)" style="transition-delay:0.3s">
+    <div class="gallery-item reveal" data-cat="individual" onclick="openLightbox(this)" style="transition-delay:0.3s">
       <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=600&q=75" alt="Personal Counseling" loading="lazy">
     </div>
-    <div class="gallery-item reveal" data-cat="stress" onclick="openLightbox(this)">
+    <div class="gallery-item reveal" data-cat="individual" onclick="openLightbox(this)">
       <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=600&q=75" alt="Stress & Anxiety Management" loading="lazy">
     </div>
-    <div class="gallery-item reveal" data-cat="depression" onclick="openLightbox(this)" style="transition-delay:0.1s">
+    <div class="gallery-item reveal" data-cat="individual" onclick="openLightbox(this)" style="transition-delay:0.1s">
       <img src="https://images.unsplash.com/photo-1541199249251-f713e6145474?w=600&q=75" alt="Depression Support" loading="lazy">
     </div>
-    <div class="gallery-item reveal" data-cat="children" onclick="openLightbox(this)" style="transition-delay:0.2s">
+    <div class="gallery-item reveal" data-cat="child" onclick="openLightbox(this)" style="transition-delay:0.2s">
       <img src="https://images.unsplash.com/photo-1560969184-10fe8719e047?w=600&q=75" alt="Art Therapy for Children" loading="lazy">
     </div>
-    <div class="gallery-item reveal" data-cat="marriage" onclick="openLightbox(this)" style="transition-delay:0.3s">
+    <div class="gallery-item reveal" data-cat="relationship" onclick="openLightbox(this)" style="transition-delay:0.3s">
       <img src="https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?w=600&q=75" alt="Relationship Workshop" loading="lazy">
     </div>
-    <div class="gallery-item reveal" data-cat="stress" onclick="openLightbox(this)">
+    <div class="gallery-item reveal" data-cat="individual" onclick="openLightbox(this)">
       <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=600&q=75" alt="Mindfulness & Relaxation" loading="lazy">
     </div>
-    <div class="gallery-item reveal" data-cat="personal" onclick="openLightbox(this)" style="transition-delay:0.1s">
+    <div class="gallery-item reveal" data-cat="individual" onclick="openLightbox(this)" style="transition-delay:0.1s">
       <img src="https://images.unsplash.com/photo-1544027993-37dbfe43562a?w=600&q=75" alt="One-on-One Counseling" loading="lazy">
     </div>
-    <div class="gallery-item reveal" data-cat="senior" onclick="openLightbox(this)" style="transition-delay:0.2s">
+    <div class="gallery-item reveal" data-cat="older" onclick="openLightbox(this)" style="transition-delay:0.2s">
       <img src="https://images.unsplash.com/photo-1516307365426-bea591f05011?w=600&q=75" alt="Senior Wellness" loading="lazy">
     </div>
-    <div class="gallery-item reveal" data-cat="depression" onclick="openLightbox(this)" style="transition-delay:0.3s">
+    <div class="gallery-item reveal" data-cat="individual" onclick="openLightbox(this)" style="transition-delay:0.3s">
       <img src="https://images.unsplash.com/photo-1499209974431-9dddcece7f88?w=600&q=75" alt="Healing & Recovery" loading="lazy">
     </div>
-    <div class="gallery-item reveal" data-cat="children" onclick="openLightbox(this)">
+    <div class="gallery-item reveal" data-cat="child" onclick="openLightbox(this)">
       <img src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=600&q=75" alt="Children Counseling Session" loading="lazy">
     </div>
-    <div class="gallery-item reveal" data-cat="marriage" onclick="openLightbox(this)" style="transition-delay:0.1s">
+    <div class="gallery-item reveal" data-cat="relationship" onclick="openLightbox(this)" style="transition-delay:0.1s">
       <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=600&q=75" alt="Marriage Counseling" loading="lazy">
     </div>
-    <div class="gallery-item reveal" data-cat="senior" onclick="openLightbox(this)" style="transition-delay:0.2s">
+    <div class="gallery-item reveal" data-cat="older" onclick="openLightbox(this)" style="transition-delay:0.2s">
       <img src="https://images.unsplash.com/photo-1581579438747-1dc8d17bbce4?w=600&q=75" alt="Senior Citizen Counseling" loading="lazy">
     </div>
-    <div class="gallery-item reveal" data-cat="personal" onclick="openLightbox(this)" style="transition-delay:0.3s">
+    <div class="gallery-item reveal" data-cat="individual" onclick="openLightbox(this)" style="transition-delay:0.3s">
       <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=600&q=75" alt="Personal Counseling" loading="lazy">
     </div>
-    <div class="gallery-item reveal" data-cat="stress" onclick="openLightbox(this)">
+    <div class="gallery-item reveal" data-cat="individual" onclick="openLightbox(this)">
       <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=600&q=75" alt="Stress & Anxiety Management" loading="lazy">
     </div>
-    <div class="gallery-item reveal" data-cat="depression" onclick="openLightbox(this)" style="transition-delay:0.1s">
+    <div class="gallery-item reveal" data-cat="individual" onclick="openLightbox(this)" style="transition-delay:0.1s">
       <img src="https://images.unsplash.com/photo-1541199249251-f713e6145474?w=600&q=75" alt="Depression Support" loading="lazy">
     </div>
-    <div class="gallery-item reveal" data-cat="children" onclick="openLightbox(this)" style="transition-delay:0.2s">
+    <div class="gallery-item reveal" data-cat="child" onclick="openLightbox(this)" style="transition-delay:0.2s">
       <img src="https://images.unsplash.com/photo-1560969184-10fe8719e047?w=600&q=75" alt="Art Therapy for Children" loading="lazy">
     </div>
-    <div class="gallery-item reveal" data-cat="marriage" onclick="openLightbox(this)" style="transition-delay:0.3s">
+    <div class="gallery-item reveal" data-cat="relationship" onclick="openLightbox(this)" style="transition-delay:0.3s">
       <img src="https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?w=600&q=75" alt="Relationship Workshop" loading="lazy">
     </div>
-    <div class="gallery-item reveal" data-cat="stress" onclick="openLightbox(this)">
+    <div class="gallery-item reveal" data-cat="individual" onclick="openLightbox(this)">
       <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=600&q=75" alt="Mindfulness & Relaxation" loading="lazy">
     </div>
-    <div class="gallery-item reveal" data-cat="personal" onclick="openLightbox(this)" style="transition-delay:0.1s">
+    <div class="gallery-item reveal" data-cat="individual" onclick="openLightbox(this)" style="transition-delay:0.1s">
       <img src="https://images.unsplash.com/photo-1544027993-37dbfe43562a?w=600&q=75" alt="One-on-One Counseling" loading="lazy">
     </div>
-    <div class="gallery-item reveal" data-cat="senior" onclick="openLightbox(this)" style="transition-delay:0.2s">
+    <div class="gallery-item reveal" data-cat="older" onclick="openLightbox(this)" style="transition-delay:0.2s">
       <img src="https://images.unsplash.com/photo-1516307365426-bea591f05011?w=600&q=75" alt="Senior Wellness" loading="lazy">
     </div>
-    <div class="gallery-item reveal" data-cat="depression" onclick="openLightbox(this)" style="transition-delay:0.3s">
+    <div class="gallery-item reveal" data-cat="individual" onclick="openLightbox(this)" style="transition-delay:0.3s">
       <img src="https://images.unsplash.com/photo-1499209974431-9dddcece7f88?w=600&q=75" alt="Healing & Recovery" loading="lazy">
     </div>
   </div>
@@ -323,7 +326,7 @@ footer { padding-left:6%; padding-right:6%; }
   <p>Take the first step towards a brighter, more fulfilling future. Our counsellors are ready to guide you.</p>
   <div class="cta-banner-btns">
     <a class="btn-white" href="contact.html">Book an Appointment</a>
-    <a class="btn-white-outline" href="tel:+918779292084">Call Us Now</a>
+    <a class="btn-white-outline" href="tel:+919423425900">Call Us Now</a>
   </div>
   <ul class="cta-points">
     <li><i class="fa-solid fa-shield-heart"></i> 100% Confidential</li>
@@ -335,15 +338,9 @@ footer { padding-left:6%; padding-right:6%; }
 <footer>
   <div class="footer-grid">
     <div class="footer-brand">
-      <div class="logo">
-        <div class="logo-icon">B</div>
-        <div class="logo-text">
-          <span class="logo-name">Blossom Counseling</span>
-          <span class="logo-sub">Amravati</span>
-        </div>
-      </div>
+      <a class="logo" href="../index.html"><img class="footer-logo-img" src="../public/logo.png" alt="Blossom Counseling Amravati"></a>
       <p class="footer-about">A trusted name in counselling. We help individuals unlock their full potential through expert guidance, skill development, and personalized support.</p>
-      <div class="footer-contact-item">📍 Shop No 9, 1st Floor, Seasons Harmony, Khadakpada, Kalyan, MH 421301</div>
+      <div class="footer-contact-item">📍 103, Sitaram Apartment, Balaji Plot, behind Dr. Parwani Hospital, Madhokar Peth, Amravati, MH 444605</div>
     </div>
     <div class="footer-col">
       <h4>Our Services</h4>
@@ -361,7 +358,7 @@ footer { padding-left:6%; padding-right:6%; }
     <div class="footer-col">
       <h4>Quick Links</h4>
       <ul>
-        <li><a href="index.html">Home</a></li>
+        <li><a href="../index.html">Home</a></li>
         <li><a href="about.html">About Us</a></li>
         <li><a href="gallery.html">Gallery</a></li>
         <li><a href="blog.html">Blog</a></li>
@@ -376,20 +373,19 @@ footer { padding-left:6%; padding-right:6%; }
       <ul>
         <li class="footer-contact-link"><i class="fa-solid fa-phone"></i><a href="tel:+919423425900">+91 9423425900</a></li>
         <li class="footer-contact-link"><i class="fa-regular fa-envelope"></i><a href="mailto:blossomcounselingservice@gmail.com">blossomcounselingservice@gmail.com</a></li>
-        <li class="footer-contact-link"><i class="fa-brands fa-whatsapp"></i><a href="https://wa.me/918779292084" target="_blank">WhatsApp Us</a></li>
+        <li class="footer-contact-link"><i class="fa-brands fa-whatsapp"></i><a href="https://wa.me/919423425900" target="_blank">WhatsApp Us</a></li>
 </ul>
       <div class="footer-socials">
-        <a href="https://facebook.com/" target="_blank" aria-label="Facebook" class="fs-fb"><i class="fa-brands fa-facebook-f"></i></a>
-        <a href="https://instagram.com/" target="_blank" aria-label="Instagram" class="fs-ig"><i class="fa-brands fa-instagram"></i></a>
-        <a href="https://wa.me/918779292084" target="_blank" aria-label="WhatsApp" class="fs-wa"><i class="fa-brands fa-whatsapp"></i></a>
-        <a href="https://twitter.com/" target="_blank" aria-label="X" class="fs-x"><i class="fa-brands fa-x-twitter"></i></a>
-        <a href="https://linkedin.com/" target="_blank" aria-label="LinkedIn" class="fs-in"><i class="fa-brands fa-linkedin-in"></i></a>
+        <a href="#" aria-label="Facebook" class="fs-fb"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com/psychologist_nimisha" target="_blank" aria-label="Instagram" class="fs-ig"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://wa.me/919423425900" target="_blank" aria-label="WhatsApp" class="fs-wa"><i class="fa-brands fa-whatsapp"></i></a>
+        <a href="https://www.linkedin.com/in/nimishasaboo/" target="_blank" aria-label="LinkedIn" class="fs-in"><i class="fa-brands fa-linkedin-in"></i></a>
         <a href="https://youtube.com/" target="_blank" aria-label="YouTube" class="fs-yt"><i class="fa-brands fa-youtube"></i></a>
       </div>      <div class="footer-map">
         <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3767.5!2d73.1285!3d19.2403!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7952b5a5a5a5a%3A0x5a5a5a5a5a5a5a5a!2sSeasons%20Harmony%2C%20Khadakpada%2C%20Kalyan%2C%20Maharashtra%20421301!5e0!3m2!1sen!2sin!4v1"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d232.91970025247656!2d77.75143465873889!3d20.92377468773551!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bd6a5811d5a1ae3%3A0xed7689adac2f353b!2sBlossom%20Counseling%20Services!5e0!3m2!1sen!2sin!4v1795083498727!5m2!1sen!2sin"
           allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
-          title="Blossom Counseling Location – Seasons Harmony, Khadakpada, Kalyan">
+          title="Blossom Counseling Location – Madhokar Peth, Amravati">
         </iframe>
       </div>
     </div>
@@ -400,6 +396,7 @@ footer { padding-left:6%; padding-right:6%; }
     <span class="footer-bottom-right">Developed &amp; Managed by <a href="https://tejasmehar.in" target="_blank" rel="noopener">Tejas Mehar</a></span>
   </div>
 </footer>
+<script src="../services-data.js?v=4"></script>
 
 <script>
 function toggleMenu() {
@@ -477,7 +474,8 @@ window.addEventListener('resize', () => { const n = pageSize(); if (n !== lastSi
 
 // ===== YouTube videos =====
 // Add your YouTube video IDs here (the part after v= in the URL)
-const videoIds = ['VIDEO_ID_1','VIDEO_ID_2','VIDEO_ID_3','VIDEO_ID_4','VIDEO_ID_5','VIDEO_ID_6','VIDEO_ID_7','VIDEO_ID_8','VIDEO_ID_9','VIDEO_ID_10','VIDEO_ID_11','VIDEO_ID_12'];
+// Filled from the admin panel (Gallery Management) by loadGallery() below.
+let videoIds = [];
 let vPage = 1, vPaged = false;
 // Desktop: 3 per row x 2 rows = 6 | Tablet/Mobile: 2 per row x 2 rows = 4
 function videoPageSize() { return window.innerWidth <= 1024 ? 4 : 6; }
@@ -487,7 +485,7 @@ function renderVideos() {
   const pages = Math.max(1, Math.ceil(videoIds.length / size));
   if (vPage > pages) vPage = pages;
   document.getElementById('videoGrid').innerHTML = videoIds.slice((vPage - 1) * size, vPage * size).map((id, i) =>
-    '<div class="video-card"><iframe src="https://www.youtube.com/embed/' + id + '?rel=0&playsinline=1" title="YouTube video ' + ((vPage - 1) * size + i + 1) + '" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>'
+    '<div class="video-card"><iframe src="https://www.youtube.com/embed/' + encodeURIComponent(id) + '?rel=0&playsinline=1" title="YouTube video ' + ((vPage - 1) * size + i + 1) + '" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>'
   ).join('');
   document.getElementById('videoMoreWrap').style.display = (!vPaged && pages > 1) ? 'block' : 'none';
   const pg = document.getElementById('videoPagination');
@@ -507,9 +505,39 @@ let lastVSize = videoPageSize();
 window.addEventListener('resize', () => { const n = videoPageSize(); if (n !== lastVSize) { lastVSize = n; vPage = 1; vPaged = false; renderVideos(); } });
 renderVideos();
 
+// ===== Load photos & videos managed from the admin panel =====
+function escAttr(t) { return String(t == null ? '' : t).replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;').replace(/>/g, '&gt;'); }
+function loadGallery() {
+  fetch('../admin/index.php?action=api&r=gallery', { cache: 'no-store' })
+    .then(function (r) { return r.json(); })
+    .then(function (d) {
+      if (!d || !d.ok) return;
+      const grid = document.getElementById('galleryGrid');
+      grid.innerHTML = d.images.length ? d.images.map(function (im) {
+        return '<div class="gallery-item" data-cat="' + escAttr(im.category) + '" onclick="openLightbox(this)">' +
+          '<img src="' + escAttr(im.src) + '" alt="' + escAttr(im.title || 'Gallery photo') + '" loading="lazy" referrerpolicy="no-referrer">' +
+          (im.title ? '<div class="gallery-cap">' + escAttr(im.title) + '</div>' : '') + '</div>';
+      }).join('') : '<p style="grid-column:1/-1;text-align:center;color:var(--muted)">Photos will appear here soon.</p>';
+      if (d.categories) window.BLOSSOM_GALLERY_CATS = d.categories;
+      if (window.renderGalleryFilters) window.renderGalleryFilters();
+      currentCat = 'all'; page = 1; paged = false;
+      applyFilter();
+
+      videoIds = d.videos.map(function (v) { return v.id; });
+      vPage = 1; vPaged = false;
+      renderVideos();
+      document.querySelector('.video-section').style.display = videoIds.length ? '' : 'none';
+    })
+    .catch(function () { /* keep the built-in sample photos if the admin API is unreachable */ });
+}
+// Until the admin data arrives (or if it is unreachable) don't show broken placeholder videos.
+document.querySelector('.video-section').style.display = 'none';
+loadGallery();
+
 // Lightbox
 function openLightbox(el) {
-  const src = el.querySelector('img').src.replace(/w=\d+/, 'w=1600');
+  const raw = el.querySelector('img').src;
+  const src = /images\.unsplash\.com/.test(raw) ? raw.replace(/w=\d+/, 'w=1600') : raw;
   const alt = el.querySelector('img').alt;
   document.getElementById('lightboxImg').src = src;
   document.getElementById('lightboxImg').alt = alt;
@@ -526,6 +554,32 @@ document.addEventListener('keydown', e => { if(e.key === 'Escape') closeLightbox
 
 // Init
 applyFilter();
+
+// Photos and videos added in the admin panel are shown first; the sample content stays as a fallback.
+if (window.fetch) {
+  fetch('../admin/index.php?action=api&r=gallery').then(r => r.json()).then(d => {
+    if (!d || !d.ok) return;
+    const grid = document.getElementById('galleryGrid');
+    if (d.images.length) {
+      d.images.slice().reverse().forEach(im => {
+        const item = document.createElement('div');
+        item.className = 'gallery-item';
+        item.dataset.cat = im.category;
+        item.addEventListener('click', () => openLightbox(item));
+        const img = document.createElement('img');
+        img.src = im.src; img.alt = im.title || 'Gallery photo'; img.loading = 'lazy';
+        item.appendChild(img);
+        grid.insertBefore(item, grid.firstChild);
+      });
+      page = 1; paged = false; applyFilter();
+    }
+    if (d.videos.length) {
+      videoIds.length = 0;
+      d.videos.forEach(v => videoIds.push(v.id));
+      vPage = 1; vPaged = false; renderVideos();
+    }
+  }).catch(() => {});
+}
 </script>
 <script>
 (function(){
@@ -544,5 +598,6 @@ applyFilter();
   els.forEach(function(e){ io.observe(e); });
 })();
 </script>
+<script src="../booking-modal.js"></script>
 </body>
 </html>

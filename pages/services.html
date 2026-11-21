@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Our Services – Blossom Counseling</title>
+<title>Our Services – Counselling &amp; Therapy in Amravati | Blossom Counseling</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500&family=Rubik:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="../style.css">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -35,14 +35,12 @@
 
   /* ── PAGE HERO ── */
   .page-hero{
-    background:linear-gradient(135deg,#eeedfb 0%,#f3f2fc 60%,#faf9fd 100%);
-    padding:70px max(5%, calc((100% - 1320px) / 2)) 60px;
+    background:linear-gradient(135deg,#dcd9f7 0%,#e6e4fa 55%,#f0eefc 100%);
+    padding:44px max(5%, calc((100% - 1320px) / 2)) 40px;
     position:relative;overflow:hidden;
-    display:grid;
-    grid-template-columns:1fr 380px;
-    gap:48px;
-    align-items:center;
+    text-align:center;
   }
+  .page-hero-desc{margin-left:auto;margin-right:auto;}
   .page-hero-bg{display:none;}
   .page-hero-overlay{display:none;}
   .hero-circle-left{display:none;}
@@ -81,7 +79,7 @@
   .page-hero-actions{
     display:flex;gap:12px;flex-wrap:wrap;
     animation:fadeSlideUp 0.6s 0.26s ease both;
-    margin-bottom:28px;
+    margin-bottom:0;justify-content:center;
   }
   .page-hero-btn-primary{
     display:inline-flex;align-items:center;gap:8px;
@@ -197,6 +195,14 @@
     .page-hero{padding:50px 5% 40px;}
     .page-hero h1{font-size:28px;}
     .page-hero-actions{flex-direction:column;align-items:flex-start;}
+    .page-hero-badge{
+      max-width:100%;box-sizing:border-box;
+      font-size:11.5px;letter-spacing:0.04em;
+      padding:6px 12px;gap:6px;
+      text-align:center;line-height:1.4;
+      white-space:normal;
+    }
+    .page-hero-badge::before{flex:0 0 7px;}
   }
 
   /* ── LAYOUT ── */
@@ -258,6 +264,7 @@
     scroll-margin-top: 90px;
   }
   .service-section.hidden-section { display: none; }
+  .svc-pager { display: none; }
   .service-header {
     display: flex;
     gap: 40px;
@@ -421,9 +428,107 @@
   }
   footer strong { color: white; }
 
+  /* ── SIDEBAR: one service per row ── */
+  .services-layout { grid-template-columns: 330px 1fr; }
+  .sidebar { padding-right: 32px; }
+  .sidebar-nav a { white-space: nowrap; font-size: 15px; }
+  .sidebar-nav .sb-name { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; }
+
+  /* ── SERVICE CARD ── */
+  .svc-card {
+    background: #fff; border: 1px solid var(--border); border-radius: 20px; overflow: hidden;
+    box-shadow: 0 10px 34px rgba(90,92,184,.10);
+  }
+  .svc-intro { display: grid; grid-template-columns: 0.88fr 1.12fr; gap: 32px; align-items: start; margin-bottom: 26px; }
+  .svc-intro .svc-card-desc { margin: 0; padding-top: 0; line-height: 1.8; }
+  .svc-card-media { aspect-ratio: 4/3; border-radius: 14px; overflow: hidden; }
+  .svc-card-media img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .svc-card-tag {
+    position: absolute; left: 24px; bottom: 20px; z-index: 1; display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(255,255,255,.95); color: var(--purple-deep); font-size: 13px; font-weight: 600;
+    letter-spacing: 1px; text-transform: uppercase; padding: 8px 16px; border-radius: 30px;
+  }
+  .svc-card-tag.static { position: static; background: var(--lavender-bg); margin-bottom: 14px; }
+  .svc-card-body { padding: 32px 36px 34px; }
+  .svc-card-body h2 { font-family: var(--font-serif); font-size: clamp(26px, 3vw, 34px); color: var(--purple-text); line-height: 1.2; margin-bottom: 14px; }
+  .svc-card-desc { font-size: 17px; line-height: 1.85; color: var(--muted-text); margin-bottom: 26px; }
+  .svc-covers-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 14px; padding-top: 22px; border-top: 1px dashed var(--border); }
+  .svc-covers-head h3 { font-family: var(--font-serif); font-size: 21px; color: var(--purple-text); margin: 0; }
+  .svc-covers-head span { background: var(--lavender-bg); color: var(--purple-deep); font-size: 13px; font-weight: 600; padding: 4px 12px; border-radius: 20px; }
+  .svc-card .svc-tick-grid { display: grid; grid-template-columns: repeat(2, 1fr); column-gap: 36px; row-gap: 0; }
+  .svc-card .svc-tick-grid li {
+    background: none; border: none; border-radius: 0;
+    padding: 9px 0 9px 32px; font-size: 16px; line-height: 1.5; color: var(--body-text);
+  }
+  .svc-card .svc-tick-grid li::before { left: 0; top: 10px; }
+  .svc-card .svc-groups { grid-template-columns: repeat(2, 1fr); gap: 20px 36px; }
+  .svc-card .svc-group { background: none; border: none; padding: 0; }
+  .svc-card .svc-group h4 { font-family: var(--font-serif); color: var(--purple-text); font-size: 17px; margin-bottom: 4px; padding-bottom: 8px; }
+  .svc-card .svc-group .svc-tick li { font-size: 16px; padding: 7px 0 7px 32px; }
+  .svc-card .svc-group .svc-tick li::before { left: 0; top: 8px; }
+  .svc-card-foot { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 14px; margin-top: 28px; padding-top: 22px; border-top: 1px solid var(--border); }
+  .svc-card-foot .svc-book-btn { margin-top: 0; border-radius: 30px; padding: 12px 26px; }
+  .svc-card-foot span { font-size: 14px; color: var(--muted-text); }
+  .svc-card-foot span i { color: var(--purple-accent); margin-right: 4px; }
+
+  @media (max-width: 1100px) { .svc-card .svc-tick-grid, .svc-card .svc-groups { grid-template-columns: 1fr; } }
   @media (max-width: 768px) {
-    .services-layout { grid-template-columns: 1fr; }
-    .sidebar { display: none; }
+    /* points: plain list (tick icon only, no box) for compact, clear reading */
+    .svc-card .svc-tick-grid { gap: 0; }
+    .svc-card .svc-tick-grid li, .svc-card .svc-tick-grid li:hover {
+      background: none; border: none; border-radius: 0; transform: none;
+      padding: 7px 0 7px 30px; font-size: 15px; line-height: 1.5;
+    }
+    .svc-card .svc-tick-grid li::before { left: 0; top: 8px; }
+    .svc-card .svc-groups { gap: 14px; }
+    .svc-card .svc-group { background: none; border: none; padding: 0; }
+    .svc-card .svc-group h4 { margin-bottom: 4px; padding-bottom: 6px; }
+    .svc-card .svc-group .svc-tick li { padding: 6px 0 6px 30px; }
+    .svc-card .svc-group .svc-tick li::before { left: 0; top: 7px; }
+    .svc-covers-head { padding-top: 16px; }
+    .svc-intro { grid-template-columns: 1fr; gap: 18px; }
+    .svc-card-media { aspect-ratio: auto; max-height: none; width: 90%; max-width: 360px; margin: 0 auto; order: -1; }
+    .svc-card-media img { height: auto; object-fit: contain; }
+    .svc-intro .svc-card-desc { font-size: 16px; }
+    .svc-card-body { padding: 24px 20px; }
+  }
+
+  @media (max-width: 768px) {
+    .services-layout { grid-template-columns: minmax(0, 1fr); overflow-x: hidden; }
+    .services-layout > .sidebar, .services-layout > .content-panel { min-width: 0; max-width: 100%; }
+    /* hero buttons: one row on mobile */
+    .page-hero-actions { flex-direction: row; flex-wrap: nowrap; align-items: stretch; justify-content: center; gap: 10px; }
+    .page-hero-actions > a { flex: 1 1 0; justify-content: center; text-align: center; padding: 12px 10px; font-size: 15px; white-space: nowrap; }
+
+    /* service switcher: swipeable chip bar instead of hidden sidebar */
+    .services-layout { padding-top: 20px; }
+    .sidebar { position: static; padding: 0; margin-bottom: 20px; }
+    .sidebar-label { font-size: 12px; letter-spacing: 2px; margin-bottom: 10px; }
+    .sidebar-nav {
+      display: flex; gap: 8px; overflow-x: auto; -webkit-overflow-scrolling: touch;
+      scrollbar-width: none; padding: 2px 2px 8px; margin: 0 -5%; padding-left: 5%; padding-right: 5%;
+      scroll-snap-type: x proximity; position: relative;
+    }
+    .sidebar-nav::-webkit-scrollbar { display: none; }
+    .sidebar-nav li, .sidebar-nav li:first-child { border: none; flex: 0 0 auto; scroll-snap-align: start; }
+    .sidebar-nav a, .sidebar-nav a:hover {
+      padding: 9px 16px; font-size: 14px; white-space: nowrap; border-radius: 30px;
+      background: #fff; border: 1.5px solid var(--border); color: var(--purple-deep);
+    }
+    .sidebar-nav .arrow { display: none; }
+    .sidebar-nav .sb-name { overflow: visible; text-overflow: clip; }
+    .sidebar-nav .active-link, .sidebar-nav .active-link:hover {
+      margin: 0; background: var(--purple-deep); color: #fff; border-color: var(--purple-deep); font-weight: 600; border-radius: 30px;
+    }
+    .service-section { margin-bottom: 28px; }
+    .svc-pager { gap: 10px; margin: 8px 0 36px; justify-content: center; flex-wrap: nowrap; }
+    .svc-pager-btn {
+      flex: 1 1 0; min-width: 0; display: inline-flex; align-items: center; justify-content: center; gap: 6px;
+      padding: 12px 10px; font-size: 13px; font-weight: 600; border-radius: 30px; cursor: pointer; text-align: center; line-height: 1.25;
+      background: #fff; color: var(--purple-deep); border: 1.5px solid var(--purple-deep);
+    }
+    .svc-pager-btn.primary { background: var(--purple-deep); color: #fff; }
+    .svc-pager.single .svc-pager-btn { flex: 0 1 auto; padding: 13px 22px; font-size: 14px; }
     .service-header { flex-direction: column; }
     .service-img { flex: none; width: 100%; min-height: 220px; }
     .contact-strip { flex-direction: column; text-align: center; }
@@ -456,7 +561,7 @@ footer{background:#14122b;color:#9593b0;padding:60px 5% 24px;}
 <body>
 
 <!-- WHATSAPP FLOAT -->
-<a class="whatsapp-float" href="https://wa.me/918779292084" target="_blank" aria-label="Chat on WhatsApp">
+<a class="whatsapp-float" href="https://wa.me/919423425900" target="_blank" aria-label="Chat on WhatsApp">
   <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" fill="white"/></svg>
 </a>
 
@@ -473,22 +578,22 @@ footer{background:#14122b;color:#9593b0;padding:60px 5% 24px;}
     </div>
   </div>
   <div class="topbar-right">
-    <a href="https://instagram.com/" target="_blank" aria-label="Instagram" class="tb-ig"><i class="fa-brands fa-instagram"></i></a>
-    <a href="https://facebook.com/" target="_blank" aria-label="Facebook" class="tb-fb"><i class="fa-brands fa-facebook-f"></i></a>
+    <a href="https://www.instagram.com/psychologist_nimisha" target="_blank" aria-label="Instagram" class="tb-ig"><i class="fa-brands fa-instagram"></i></a>
+    <a href="#" aria-label="Facebook" class="tb-fb"><i class="fa-brands fa-facebook-f"></i></a>
     <a href="https://youtube.com/" target="_blank" aria-label="YouTube" class="tb-yt"><i class="fa-brands fa-youtube"></i></a>
-    <a href="https://linkedin.com/" target="_blank" aria-label="LinkedIn" class="tb-in"><i class="fa-brands fa-linkedin-in"></i></a>
+    <a href="https://www.linkedin.com/in/nimishasaboo/" target="_blank" aria-label="LinkedIn" class="tb-in"><i class="fa-brands fa-linkedin-in"></i></a>
+    <a href="https://wa.me/919423425900" target="_blank" rel="noopener" aria-label="WhatsApp" class="tb-wa"><i class="fa-brands fa-whatsapp"></i></a>
   </div>
 </div>
 
 <nav class="navbar">
-  <a class="logo" href="index.html">
-    <div class="logo-icon">B</div>
-    <span class="logo-name">Blossom Counseling</span>
+  <a class="logo" href="../index.html">
+    <img class="logo-img" src="../public/logo.png" alt="Blossom Counseling Amravati">
   </a>
   <div class="nav-center">
     <p class="nav-tagline">Find the Right Path with Expert Counselling</p>
     <ul class="nav-links">
-      <li><a class="nav-link" href="index.html">Home</a></li>
+      <li><a class="nav-link" href="../index.html">Home</a></li>
       <li><a class="nav-link" href="about.html">About Us</a></li>
       <li class="nav-dropdown">
         <a class="nav-link active" href="services.html">Our Services <i class="fa-solid fa-chevron-down dd-chev"></i></a>
@@ -514,7 +619,7 @@ footer{background:#14122b;color:#9593b0;padding:60px 5% 24px;}
 
 <!-- MOBILE MENU -->
 <div class="mobile-menu" id="mobileMenu">
-  <a class="mobile-nav-link" href="index.html">Home</a>
+  <a class="mobile-nav-link" href="../index.html">Home</a>
   <a class="mobile-nav-link" href="about.html">About Us</a>
   <button class="mobile-services-toggle" id="mobileServicesToggle" onclick="toggleMobileServices()">
     Our Services
@@ -537,46 +642,13 @@ footer{background:#14122b;color:#9593b0;padding:60px 5% 24px;}
 </div>
 <!-- PAGE HERO -->
 <section class="page-hero">
-  <div class="page-hero-bg"></div>
-  <div class="page-hero-overlay"></div>
-  <div class="hero-circle-left"></div>
-  <div class="page-hero-inner">
-    <div class="page-hero-left">
-      <div class="page-hero-badge">Trusted Counselling Centre · Kalyan</div>
-      <h1>Expert <em>Counselling</em><br>and Support Services</h1>
-      <p class="page-hero-desc">Compassionate, certified counselling tailored to every individual and family. We walk beside you through life's most challenging moments.</p>
-      <div class="page-hero-actions">
-        <a href="contact.html" class="page-hero-btn-primary">
-          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-          Book a Session
-        </a>
-        <a href="#children" class="page-hero-btn-outline">
-          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-          Explore Services
-        </a>
-        <a href="tel:+918779292084" class="page-hero-btn-ghost">
-          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.76 19.79 19.79 0 01.22 1.09 2 2 0 012.2 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.09a16 16 0 006 6l.56-.56a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92v2z"/></svg>
-          Call Now
-        </a>
-      </div>
-      <div class="hero-trust">
-        <div class="hero-trust-pill"><span>✅</span> Certified Counsellors</div>
-        <div class="hero-trust-pill"><span>🔒</span> 100% Confidential</div>
-        <div class="hero-trust-pill"><span>⭐</span> 5-Star Rated</div>
-      </div>
-    </div>
-    <div class="page-hero-right">
-      <div class="svc-hero-ring"></div>
-      <div class="svc-hero-circle">
-        <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=600&h=600&fit=crop" alt="Counselling Session"/>
-      </div>
-      <div class="svc-hero-badge">
-        <div class="svc-hero-badge-icon">🌿</div>
-        <div>
-          <strong>150+ Lives Touched</strong>
-          <span>Across Kalyan and Beyond</span>
-        </div>
-      </div>
+  <div class="page-hero-left">
+    <div class="page-hero-badge">Trusted Counselling Centre · Amravati</div>
+    <h1>Expert <em>Counselling</em> and Support Services</h1>
+    <p class="page-hero-desc">Compassionate, certified counselling tailored to every individual and family.</p>
+    <div class="page-hero-actions">
+      <a href="contact.html" class="page-hero-btn-primary">Book Appointment</a>
+      <a href="about.html" class="page-hero-btn-outline">About Us</a>
     </div>
   </div>
 </section>
@@ -785,36 +857,6 @@ footer{background:#14122b;color:#9593b0;padding:60px 5% 24px;}
       </div>
     </section>
 
-    <!-- Why Choose Us -->
-    <div class="svc-why">
-      <div class="svc-why-header">
-        <div class="service-tag">Why Choose Blossom Counseling</div>
-        <h3>What Makes Us Different</h3>
-      </div>
-      <div class="svc-why-grid">
-        <div class="svc-why-card">
-          <div class="svc-why-icon"><i class="fa-solid fa-user-graduate"></i></div>
-          <h5>Certified Experts</h5>
-          <p>All our counsellors are professionally certified with years of hands-on experience.</p>
-        </div>
-        <div class="svc-why-card">
-          <div class="svc-why-icon"><i class="fa-solid fa-lock"></i></div>
-          <h5>100% Confidential</h5>
-          <p>Every session is completely private. Your trust and privacy are our top priority.</p>
-        </div>
-        <div class="svc-why-card">
-          <div class="svc-why-icon"><i class="fa-solid fa-house-chimney-medical"></i></div>
-          <h5>Home Visits</h5>
-          <p>Can't visit us? We come to you. Home visit counselling available across Kalyan.</p>
-        </div>
-        <div class="svc-why-card">
-          <div class="svc-why-icon"><i class="fa-solid fa-people-roof"></i></div>
-          <h5>All Age Groups</h5>
-          <p>From children to senior citizens — we have specialized support for every stage of life.</p>
-        </div>
-      </div>
-    </div>
-
 
   </main>
 </div>
@@ -826,7 +868,7 @@ footer{background:#14122b;color:#9593b0;padding:60px 5% 24px;}
   <p>Take the first step towards a brighter, more fulfilling future. Our counsellors are ready to guide you.</p>
   <div class="cta-banner-btns">
     <a class="btn-white" href="contact.html">Book an Appointment</a>
-    <a class="btn-white-outline" href="tel:+918779292084">Call Us Now</a>
+    <a class="btn-white-outline" href="tel:+919423425900">Call Us Now</a>
   </div>
   <ul class="cta-points">
     <li><i class="fa-solid fa-shield-heart"></i> 100% Confidential</li>
@@ -840,17 +882,11 @@ footer{background:#14122b;color:#9593b0;padding:60px 5% 24px;}
 <footer>
   <div class="footer-grid">
     <div class="footer-brand">
-      <div class="logo">
-        <div class="logo-icon">B</div>
-        <div class="logo-text">
-          <span class="logo-name">Blossom Counseling</span>
-          <span class="logo-sub">Amravati</span>
-        </div>
-      </div>
+      <a class="logo" href="../index.html"><img class="footer-logo-img" src="../public/logo.png" alt="Blossom Counseling Amravati"></a>
       <p class="footer-about">A trusted name in counselling. We help individuals unlock their full potential through expert guidance, skill development, and personalized support.</p>
       <div class="footer-contact-item">
         <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-        Shop No 9, 1st Floor, Seasons Harmony, Khadakpada, Kalyan, MH 421301
+        103, Sitaram Apartment, Balaji Plot, behind Dr. Parwani Hospital, Madhokar Peth, Amravati, MH 444605
       </div>
     </div>
     <div class="footer-col">
@@ -869,7 +905,7 @@ footer{background:#14122b;color:#9593b0;padding:60px 5% 24px;}
     <div class="footer-col">
       <h4>Quick Links</h4>
       <ul>
-        <li><a href="index.html">Home</a></li>
+        <li><a href="../index.html">Home</a></li>
         <li><a href="about.html">About Us</a></li>
         <li><a href="gallery.html">Gallery</a></li>
         <li><a href="blog.html">Blog</a></li>
@@ -884,17 +920,16 @@ footer{background:#14122b;color:#9593b0;padding:60px 5% 24px;}
       <ul>
         <li class="footer-contact-link"><i class="fa-solid fa-phone"></i><a href="tel:+919423425900">+91 9423425900</a></li>
         <li class="footer-contact-link"><i class="fa-regular fa-envelope"></i><a href="mailto:blossomcounselingservice@gmail.com">blossomcounselingservice@gmail.com</a></li>
-        <li class="footer-contact-link"><i class="fa-brands fa-whatsapp"></i><a href="https://wa.me/918779292084" target="_blank">WhatsApp Us</a></li>
+        <li class="footer-contact-link"><i class="fa-brands fa-whatsapp"></i><a href="https://wa.me/919423425900" target="_blank">WhatsApp Us</a></li>
 </ul>
       <div class="footer-socials">
-        <a href="https://facebook.com/" target="_blank" aria-label="Facebook" class="fs-fb"><i class="fa-brands fa-facebook-f"></i></a>
-        <a href="https://instagram.com/" target="_blank" aria-label="Instagram" class="fs-ig"><i class="fa-brands fa-instagram"></i></a>
-        <a href="https://wa.me/918779292084" target="_blank" aria-label="WhatsApp" class="fs-wa"><i class="fa-brands fa-whatsapp"></i></a>
-        <a href="https://twitter.com/" target="_blank" aria-label="X" class="fs-x"><i class="fa-brands fa-x-twitter"></i></a>
-        <a href="https://linkedin.com/" target="_blank" aria-label="LinkedIn" class="fs-in"><i class="fa-brands fa-linkedin-in"></i></a>
+        <a href="#" aria-label="Facebook" class="fs-fb"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com/psychologist_nimisha" target="_blank" aria-label="Instagram" class="fs-ig"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://wa.me/919423425900" target="_blank" aria-label="WhatsApp" class="fs-wa"><i class="fa-brands fa-whatsapp"></i></a>
+        <a href="https://www.linkedin.com/in/nimishasaboo/" target="_blank" aria-label="LinkedIn" class="fs-in"><i class="fa-brands fa-linkedin-in"></i></a>
         <a href="https://youtube.com/" target="_blank" aria-label="YouTube" class="fs-yt"><i class="fa-brands fa-youtube"></i></a>
       </div>      <div class="footer-map">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3767.8!2d73.143156!3d19.2554937!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be79380541c6db1%3A0x59b3e3f65741ef3!2sCreative%20Development%20Center!5e0!3m2!1sen!2sin!4v1680000000000!5m2!1sen!2sin" allowfullscreen="" loading="lazy" title="Blossom Counseling Location"></iframe>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d232.91970025247656!2d77.75143465873889!3d20.92377468773551!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bd6a5811d5a1ae3%3A0xed7689adac2f353b!2sBlossom%20Counseling%20Services!5e0!3m2!1sen!2sin!4v1795083498727!5m2!1sen!2sin" allowfullscreen="" loading="lazy" title="Blossom Counseling Location"></iframe>
       </div>
     </div>
   </div>
@@ -904,6 +939,7 @@ footer{background:#14122b;color:#9593b0;padding:60px 5% 24px;}
     <span class="footer-bottom-right">Developed &amp; Managed by <a href="https://tejasmehar.in" target="_blank" rel="noopener">Tejas Mehar</a></span>
   </div>
 </footer>
+<script src="../services-data.js?v=3"></script>
 
 <script>
 function toggleMenu() {
@@ -922,12 +958,45 @@ function toggleMobileServices() {
   document.getElementById('mobileServicesToggle').classList.toggle('open');
 }
 
-function showService(id) {
+/* Mobile only: show services two at a time with Back / Next pager */
+let currentServiceId = null;
+const mobileMQ = window.matchMedia('(max-width: 768px)');
+function updateMobilePair(id) {
+  let pager = document.getElementById('svcPager');
+  if (!pager) {
+    pager = document.createElement('div');
+    pager.id = 'svcPager';
+    pager.className = 'svc-pager';
+    pager.innerHTML =
+      '<button type="button" class="svc-pager-btn" id="svcPrev"><i class="fa-solid fa-arrow-left"></i> Previous Services</button>' +
+      '<button type="button" class="svc-pager-btn primary" id="svcNext">View Next Services <i class="fa-solid fa-arrow-right"></i></button>';
+    document.querySelector('.content-panel').after(pager);
+  }
+  if (!mobileMQ.matches) { pager.style.display = 'none'; return; }
+  const secs = Array.from(document.querySelectorAll('.service-section'));
+  const idx = secs.findIndex(s => s.id === id);
+  if (idx < 0) { pager.style.display = 'none'; return; }
+  const start = idx - (idx % 2);
+  if (secs[start + 1]) secs[start + 1].classList.remove('hidden-section');
+  if (secs[start]) secs[start].classList.remove('hidden-section');
+  document.querySelectorAll('.service-section:not(.hidden-section)').forEach(s => s.classList.add('visible'));
+  const prev = document.getElementById('svcPrev'), next = document.getElementById('svcNext');
+  pager.style.display = 'flex';
+  prev.style.display = start > 0 ? '' : 'none';
+  next.style.display = start + 2 < secs.length ? '' : 'none';
+  pager.classList.toggle('single', !(start > 0 && start + 2 < secs.length));
+  prev.onclick = () => showService(secs[start - 2].id);
+  next.onclick = () => showService(secs[start + 2].id);
+}
+mobileMQ.addEventListener('change', () => { if (currentServiceId) showService(currentServiceId, true); });
+
+function showService(id, noScroll) {
   // hide all sections and dividers
   document.querySelectorAll('.service-section').forEach(s => s.classList.add('hidden-section'));
   document.querySelectorAll('.divider-line').forEach(d => d.style.display = 'none');
 
   // show selected
+  currentServiceId = id;
   const target = document.getElementById(id);
   if (target) {
     target.classList.remove('hidden-section');
@@ -936,6 +1005,7 @@ function showService(id) {
     target.classList.add('reveal');
     setTimeout(() => target.classList.add('visible'), 10);
   }
+  updateMobilePair(id);
 
   // update sidebar active link
   document.querySelectorAll('.sidebar-nav a').forEach(a => {
@@ -944,6 +1014,11 @@ function showService(id) {
     if (a.getAttribute('href') === '#' + id) {
       a.classList.add('active-link');
       a.querySelectorAll('path').forEach(p => p.setAttribute('stroke','white'));
+      // mobile chip bar: keep the active chip visible
+      const bar = a.closest('.sidebar-nav');
+      if (bar && bar.scrollWidth > bar.clientWidth) {
+        bar.scrollTo({ left: a.parentElement.offsetLeft - 16, behavior: 'smooth' });
+      }
     }
   });
 
@@ -952,13 +1027,14 @@ function showService(id) {
   document.getElementById('hamburger').classList.remove('open');
 
   // scroll to top of content
-  window.scrollTo({ top: document.querySelector('.services-layout').offsetTop - 80, behavior: 'smooth' });
+  if (!noScroll) window.scrollTo({ top: document.querySelector('.services-layout').offsetTop - 80, behavior: 'smooth' });
 }
 
 // On load: show service from hash or default to first
 window.addEventListener('load', () => {
-  const hash = window.location.hash ? window.location.hash.replace('#','') : 'children';
-  showService(hash);
+  const hash = window.location.hash ? window.location.hash.replace('#','') : 'individual';
+  // only auto-scroll on load if a specific service was requested via the URL hash
+  showService(hash, !window.location.hash);
   // keep the Our Services dropdown open in the mobile menu on this page
   document.getElementById('mobileServicesSub').classList.add('open');
   document.getElementById('mobileServicesToggle').classList.add('open');
@@ -987,5 +1063,6 @@ document.querySelectorAll('.svc-why, .svc-why-card, .service-header, .service-fe
   new IntersectionObserver(function(e,o){ e.forEach(function(x){ if(x.isIntersecting){ c.classList.add('cta-in'); o.disconnect(); } }); },{threshold:0.25}).observe(c);
 })();
 </script>
+<script src="../booking-modal.js"></script>
 </body>
 </html>

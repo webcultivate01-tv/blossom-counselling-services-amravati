@@ -1,0 +1,344 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Article | Blossom Counseling Amravati</title>
+<link rel="stylesheet" href="../style.css">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500;600&family=Rubik:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+.blog-hero{background:linear-gradient(135deg,#eeedfb 0%,#f5f4fd 60%,#faf9fd 100%);padding:70px 6% 56px;text-align:center}
+.blog-hero h1{font-family:var(--font-display);font-size:clamp(32px,5vw,52px);font-weight:700;color:var(--text);margin-bottom:14px}
+.blog-hero h1 em{font-style:normal;color:var(--primary)}
+.blog-hero p{font-size:17px;color:var(--muted);line-height:1.8;max-width:620px;margin:0 auto}
+.blog-main{padding:70px 6%}
+.blog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.blog-card{background:#fff;border:1px solid var(--border);border-radius:16px;overflow:hidden;box-shadow:0 2px 16px rgba(31,29,54,0.06);display:flex;flex-direction:column;transition:transform .3s,box-shadow .3s}
+.blog-card:hover{transform:translateY(-4px);box-shadow:0 8px 30px rgba(31,29,54,0.12)}
+.blog-card img{width:100%;aspect-ratio:16/10;object-fit:cover;display:block}
+.blog-body{padding:22px 22px 24px;display:flex;flex-direction:column;gap:10px;flex:1}
+.blog-meta{font-size:14px;color:var(--light-muted);display:flex;gap:10px;align-items:center}
+.blog-tag{background:var(--primary-light);color:var(--primary-dark);padding:3px 10px;border-radius:20px;font-weight:600}
+.blog-card h3{font-family:var(--font-display);font-size:20px;line-height:1.3;color:var(--text)}
+.blog-card p{font-size:17px;color:var(--muted);line-height:1.7}
+.blog-read{margin-top:auto;align-self:flex-start;display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:16px;color:#fff;background:linear-gradient(135deg,var(--primary),var(--primary-dark));padding:11px 22px;border-radius:10px;box-shadow:0 4px 14px rgba(90,92,184,0.3);transition:transform .25s,box-shadow .25s,gap .25s}
+.blog-read:hover{transform:translateY(-2px);gap:12px;box-shadow:0 8px 22px rgba(90,92,184,0.42)}
+.blog-top{background:linear-gradient(135deg,#eeedfb 0%,#f5f4fd 60%,#faf9fd 100%);padding:40px 6% 28px;display:flex;flex-direction:column;align-items:center;gap:20px}
+.blog-search{position:relative;width:100%;max-width:640px}
+.blog-search>i{position:absolute;left:22px;top:50%;transform:translateY(-50%);color:var(--primary);font-size:16px;pointer-events:none}
+.blog-search-btn{position:absolute;right:6px;top:6px;bottom:6px;width:48px;border:none;border-radius:50%;background:linear-gradient(135deg,var(--primary),var(--primary-dark));color:#fff;font-size:16px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:transform .2s,box-shadow .2s}
+.blog-search-btn:hover{transform:scale(1.06);box-shadow:0 4px 14px rgba(90,92,184,0.45)}
+.blog-search input{width:100%;padding:16px 66px 16px 50px;border:1.5px solid var(--border);border-radius:50px;font-size:16px;font-family:var(--font-body);background:#fff;color:var(--text);box-shadow:0 4px 18px rgba(31,29,54,0.07);outline:none;transition:border-color .2s,box-shadow .2s}
+.blog-search input:focus{border-color:var(--primary);box-shadow:0 4px 22px rgba(90,92,184,0.22)}
+.blog-cats{display:flex;flex-wrap:wrap;justify-content:center;gap:10px}
+.blog-cat{border:1.5px solid var(--border);background:#fff;color:var(--primary-dark);padding:8px 18px;border-radius:10px;font-size:15px;font-weight:600;font-family:var(--font-body);cursor:pointer;transition:all .2s}
+.blog-cat:hover{border-color:var(--primary);background:var(--primary-light)}
+.blog-cat.active{background:var(--primary);border-color:var(--primary);color:#fff}
+.blog-empty{display:none;text-align:center;color:var(--muted);font-size:17px;padding:40px 0}
+.blog-card.is-hidden{display:none}
+@media(max-width:1024px){.blog-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:640px){.blog-grid{grid-template-columns:1fr}.blog-top{padding:28px 5% 20px}.blog-main{padding:36px 5%}}
+</style>
+<link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../blog-post.css">
+</head>
+<body>
+
+<a class="whatsapp-float" href="https://wa.me/919423425900" target="_blank" aria-label="Chat on WhatsApp">
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+</a>
+
+<div class="topbar">
+  <div class="topbar-left">
+    <div class="topbar-item">
+      <i class="fa-solid fa-phone"></i>
+      <a href="tel:+919423425900">+91 9423425900</a>
+    </div>
+    <div class="topbar-item">
+      <i class="fa-regular fa-envelope"></i>
+      <a href="mailto:blossomcounselingservice@gmail.com">blossomcounselingservice@gmail.com</a>
+    </div>
+  </div>
+  <div class="topbar-right">
+    <a href="https://www.instagram.com/psychologist_nimisha" target="_blank" aria-label="Instagram" class="tb-ig"><i class="fa-brands fa-instagram"></i></a>
+    <a href="#" aria-label="Facebook" class="tb-fb"><i class="fa-brands fa-facebook-f"></i></a>
+    <a href="https://youtube.com/" target="_blank" aria-label="YouTube" class="tb-yt"><i class="fa-brands fa-youtube"></i></a>
+    <a href="https://www.linkedin.com/in/nimishasaboo/" target="_blank" aria-label="LinkedIn" class="tb-in"><i class="fa-brands fa-linkedin-in"></i></a>
+    <a href="https://wa.me/919423425900" target="_blank" rel="noopener" aria-label="WhatsApp" class="tb-wa"><i class="fa-brands fa-whatsapp"></i></a>
+  </div>
+</div>
+
+<nav class="navbar">
+  <a class="logo" href="../index.html">
+    <img class="logo-img" src="../public/logo.png" alt="Blossom Counseling Amravati">
+  </a>
+  <div class="nav-center">
+    <p class="nav-tagline">Find the Right Path with Expert Counselling</p>
+    <ul class="nav-links">
+      <li><a class="nav-link" href="../index.html">Home</a></li>
+      <li><a class="nav-link" href="about.html">About Us</a></li>
+      <li class="nav-dropdown">
+        <a class="nav-link" href="services.html">Our Services <i class="fa-solid fa-chevron-down dd-chev"></i></a>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" href="services.html#children">Children Counseling</a>
+          <a class="dropdown-item" href="services.html#marriage">Marriage Counseling</a>
+          <a class="dropdown-item" href="services.html#senior">Senior Citizen Counseling</a>
+          <a class="dropdown-item" href="services.html#personal">Personal Counseling</a>
+          <a class="dropdown-item" href="services.html#relationship">Relationship Counseling</a>
+          <a class="dropdown-item" href="services.html#financial">Financial Counseling</a>
+          <a class="dropdown-item" href="services.html#stress">Stress &amp; Anxiety</a>
+          <a class="dropdown-item" href="services.html#depression">Depression Support</a>
+        </div>
+      </li>
+      <li><a class="nav-link" href="gallery.html">Gallery</a></li>
+      <li><a class="nav-link active" href="blog.html">Blog</a></li>
+      <li><a class="nav-link" href="contact.html">Contact Us</a></li>
+    </ul>
+  </div>
+  <a class="nav-btn" href="contact.html">Book Appointment</a>
+  <div class="hamburger" id="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a class="mobile-nav-link" href="../index.html">Home</a>
+  <a class="mobile-nav-link" href="about.html">About Us</a>
+  <button class="mobile-services-toggle" id="mobileServicesToggle" onclick="toggleMobileServices()">
+    Our Services
+    <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+  </button>
+  <div class="mobile-sub" id="mobileServicesSub">
+    <a class="mobile-nav-link" href="services.html#children">Children Counseling</a>
+    <a class="mobile-nav-link" href="services.html#marriage">Marriage Counseling</a>
+    <a class="mobile-nav-link" href="services.html#senior">Senior Citizen Counseling</a>
+    <a class="mobile-nav-link" href="services.html#personal">Personal Counseling</a>
+    <a class="mobile-nav-link" href="services.html#relationship">Relationship Counseling</a>
+    <a class="mobile-nav-link" href="services.html#financial">Financial Counseling</a>
+    <a class="mobile-nav-link" href="services.html#stress">Stress &amp; Anxiety</a>
+    <a class="mobile-nav-link" href="services.html#depression">Depression Support</a>
+  </div>
+  <a class="mobile-nav-link" href="gallery.html">Gallery</a>
+  <a class="mobile-nav-link" href="blog.html">Blog</a>
+  <a class="mobile-nav-link" href="contact.html">Contact Us</a>
+  <a class="mobile-book-btn" href="contact.html">Book an Appointment</a>
+</div>
+
+<section class="post-hero">
+  <div class="post-crumbs"><a class="post-back" href="blog.html" aria-label="Go back" onclick="if(document.referrer&&history.length>1){history.back();return false;}"><i class="fa-solid fa-arrow-left"></i></a><a href="../index.html">Home</a><i class="fa-solid fa-chevron-right"></i><a href="blog.html">Blog</a><i class="fa-solid fa-chevron-right"></i><span id="postCrumb">Article</span></div>
+  <div class="post-hero-grid">
+    <div class="post-hero-text">
+      <span class="post-tag" id="postTag">&nbsp;</span>
+      <h1 id="postTitle">Loading…</h1>
+      <div class="post-meta">
+        <div class="post-author"><span class="post-avatar">N</span><div><b>Nimisha P. Saboo</b><small>Counseling Psychologist</small></div></div>
+        <div class="post-facts">
+          <span><i class="fa-regular fa-calendar"></i> <span id="postDate"></span></span>
+          <span><i class="fa-regular fa-clock"></i> <span id="postRead"></span></span>
+        </div>
+      </div>
+    </div>
+    <div class="post-hero-img" id="postImgBox" hidden><img id="postImg" src="" alt=""></div>
+  </div>
+</section>
+
+<section class="post-body">
+  <article class="post-article">
+    <div id="postContent"></div>
+    <div class="post-share">Share this article
+      <a id="shWa" href="#" target="_blank" rel="noopener" aria-label="Share on WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+      <a id="shFb" href="#" target="_blank" rel="noopener" aria-label="Share on Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+      <a id="shIn" href="#" target="_blank" rel="noopener" aria-label="Share on LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+    </div>
+  </article>
+</section>
+
+<section class="related" id="relatedSec" hidden>
+  <div class="related-inner">
+    <div class="related-head">
+      <h2>Related <em>Articles</em></h2>
+      <div class="related-nav">
+        <button type="button" id="relPrev" aria-label="Previous"><i class="fa-solid fa-arrow-left"></i></button>
+        <button type="button" id="relNext" aria-label="Next"><i class="fa-solid fa-arrow-right"></i></button>
+      </div>
+    </div>
+    <div class="related-track" id="relTrack">
+    </div>
+  </div>
+</section>
+
+<script>
+(function(){
+  var API='../admin/index.php?action=api';
+  var q=new URLSearchParams(location.search), slug=(q.get('slug')||'').trim();
+  function $(id){return document.getElementById(id);}
+  function el(tag,cls,text){var n=document.createElement(tag); if(cls)n.className=cls; if(text!==undefined)n.textContent=text; return n;}
+  function fail(msg){
+    $('postTitle').textContent='Article not found';
+    $('postTag').textContent='Blog';
+    var c=$('postContent'); c.textContent=''; c.appendChild(el('p',null,msg||'This article is no longer available.'));
+    var a=el('a','blog-read','\u2190 Back to all articles'); a.href='blog.html'; c.appendChild(a);
+  }
+  if(!slug||!window.fetch){ fail(); return; }
+  fetch(API+'&r=post&slug='+encodeURIComponent(slug)).then(function(r){return r.json();}).then(function(d){
+    if(!d||!d.ok){ fail(); return; }
+    var p=d.post;
+    document.title=p.title+' | Blossom Counseling Amravati';
+    $('postCrumb').textContent=p.category; $('postTag').textContent=p.category; $('postTitle').textContent=p.title;
+    $('postDate').textContent='Posted '+p.date; $('postRead').textContent=p.read_time+' min read';
+    if(p.image){ $('postImg').src=p.image; $('postImg').alt=p.title; $('postImgBox').hidden=false; }
+    else { document.querySelector('.post-hero-grid').style.gridTemplateColumns='1fr'; }
+    $('postContent').innerHTML=p.content; // already sanitised on the server
+    var u=encodeURIComponent(location.href), t=encodeURIComponent(p.title);
+    $('shWa').href='https://wa.me/?text='+t+'%20'+u;
+    $('shFb').href='https://www.facebook.com/sharer/sharer.php?u='+u;
+    $('shIn').href='https://www.linkedin.com/sharing/share-offsite/?url='+u;
+    loadRelated(p);
+  }).catch(function(){ fail('Could not load this article. Please try again.'); });
+
+  function loadRelated(cur){
+    fetch(API+'&r=blogs').then(function(r){return r.json();}).then(function(d){
+      if(!d||!d.ok) return;
+      var list=d.posts.filter(function(x){return x.slug!==cur.slug;});
+      list.sort(function(a,b){return (b.category===cur.category)-(a.category===cur.category);});
+      list=list.slice(0,6); if(!list.length) return;
+      var t=$('relTrack');
+      list.forEach(function(p){
+        var a=el('article','blog-card');
+        if(p.image){var im=el('img'); im.src=p.image; im.alt=p.title; im.loading='lazy'; a.appendChild(im);}
+        var b=el('div','blog-body'), m=el('div','blog-meta');
+        m.appendChild(el('span','blog-tag',p.category)); m.appendChild(el('span',null,p.read_time+' min read')); b.appendChild(m);
+        b.appendChild(el('h3',null,p.title)); b.appendChild(el('p',null,p.excerpt));
+        var r=el('a','blog-read','Read more \u2192'); r.href='blog-post.html?slug='+encodeURIComponent(p.slug); b.appendChild(r);
+        a.appendChild(b); t.appendChild(a);
+      });
+      $('relatedSec').hidden=false; t.dispatchEvent(new Event('scroll'));
+    }).catch(function(){});
+  }
+})();
+</script>
+<script>
+(function(){
+  var t=document.getElementById('relTrack'),p=document.getElementById('relPrev'),n=document.getElementById('relNext');
+  function step(){var c=t.querySelector('.blog-card');return c?c.offsetWidth+26:300;}
+  function upd(){p.disabled=t.scrollLeft<=2;n.disabled=t.scrollLeft+t.clientWidth>=t.scrollWidth-2;}
+  p.addEventListener('click',function(){t.scrollBy({left:-step()});});
+  n.addEventListener('click',function(){t.scrollBy({left:step()});});
+  t.addEventListener('scroll',upd,{passive:true}); window.addEventListener('resize',upd); upd();
+})();
+</script>
+
+<section class="cta-banner">
+  <span class="cta-eyebrow"><i class="fa-solid fa-heart"></i> Your Journey Starts Here</span>
+  <h2>Book a Session Today &amp;<br>Start Changing Your Life!</h2>
+  <p>Take the first step towards a brighter, more fulfilling future. Our counsellors are ready to guide you.</p>
+  <div class="cta-banner-btns">
+    <a class="btn-white" href="contact.html">Book an Appointment</a>
+    <a class="btn-white-outline" href="tel:+919423425900">Call Us Now</a>
+  </div>
+  <ul class="cta-points">
+    <li><i class="fa-solid fa-shield-heart"></i> 100% Confidential</li>
+    <li><i class="fa-solid fa-user-doctor"></i> Caring Counsellors</li>
+    <li><i class="fa-solid fa-clock"></i> Reply within 24 hours</li>
+  </ul>
+</section>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a class="logo" href="../index.html"><img class="footer-logo-img" src="../public/logo.png" alt="Blossom Counseling Amravati"></a>
+      <p class="footer-about">A trusted name in counselling. We help individuals unlock their full potential through expert guidance, skill development, and personalized support.</p>
+      <div class="footer-contact-item">📍 103, Sitaram Apartment, Balaji Plot, behind Dr. Parwani Hospital, Madhokar Peth, Amravati, MH 444605</div>
+    </div>
+    <div class="footer-col">
+      <h4>Our Services</h4>
+      <ul>
+        <li><a href="services.html#children">Children Counseling</a></li>
+        <li><a href="services.html#marriage">Marriage Counseling</a></li>
+        <li><a href="services.html#senior">Senior Citizen</a></li>
+        <li><a href="services.html#personal">Personal Counseling</a></li>
+        <li><a href="services.html#relationship">Relationship Counseling</a></li>
+        <li><a href="services.html#financial">Financial Counseling</a></li>
+        <li><a href="services.html#stress">Stress &amp; Anxiety</a></li>
+        <li><a href="services.html#depression">Depression Support</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+        <li><a href="contact.html">Book Appointment</a></li>
+        <li><a href="privacy.html">Privacy Policy</a></li>
+        <li><a href="terms.html">Terms &amp; Conditions</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact Us</h4>
+      <ul>
+        <li class="footer-contact-link"><i class="fa-solid fa-phone"></i><a href="tel:+919423425900">+91 9423425900</a></li>
+        <li class="footer-contact-link"><i class="fa-regular fa-envelope"></i><a href="mailto:blossomcounselingservice@gmail.com">blossomcounselingservice@gmail.com</a></li>
+        <li class="footer-contact-link"><i class="fa-brands fa-whatsapp"></i><a href="https://wa.me/919423425900" target="_blank">WhatsApp Us</a></li>
+</ul>
+      <div class="footer-socials">
+        <a href="#" aria-label="Facebook" class="fs-fb"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com/psychologist_nimisha" target="_blank" aria-label="Instagram" class="fs-ig"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://wa.me/919423425900" target="_blank" aria-label="WhatsApp" class="fs-wa"><i class="fa-brands fa-whatsapp"></i></a>
+        <a href="https://www.linkedin.com/in/nimishasaboo/" target="_blank" aria-label="LinkedIn" class="fs-in"><i class="fa-brands fa-linkedin-in"></i></a>
+        <a href="https://youtube.com/" target="_blank" aria-label="YouTube" class="fs-yt"><i class="fa-brands fa-youtube"></i></a>
+      </div>      <div class="footer-map">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d232.91970025247656!2d77.75143465873889!3d20.92377468773551!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bd6a5811d5a1ae3%3A0xed7689adac2f353b!2sBlossom%20Counseling%20Services!5e0!3m2!1sen!2sin!4v1795083498727!5m2!1sen!2sin"
+          allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+          title="Blossom Counseling Location – Madhokar Peth, Amravati">
+        </iframe>
+      </div>
+    </div>
+  </div>
+  <hr class="footer-divider">
+  <div class="footer-bottom">
+    <span>Copyrights © 2026 Blossom Counseling. All Rights Reserved.</span>
+    <span class="footer-bottom-right">Developed &amp; Managed by <a href="https://tejasmehar.in" target="_blank" rel="noopener">Tejas Mehar</a></span>
+  </div>
+</footer>
+<script src="../services-data.js?v=3"></script>
+
+<script>
+function toggleMenu() {
+  document.getElementById('hamburger').classList.toggle('open');
+  document.getElementById('mobileMenu').classList.toggle('open');
+  syncMenuTop();
+}
+function syncMenuTop() {
+  var nav = document.querySelector('.navbar'), m = document.getElementById('mobileMenu');
+  if (nav && m) m.style.top = Math.max(0, nav.getBoundingClientRect().bottom) + 'px';
+}
+window.addEventListener('scroll', syncMenuTop, {passive:true});
+window.addEventListener('resize', syncMenuTop);
+function toggleMobileServices() {
+  document.getElementById('mobileServicesToggle').classList.toggle('open');
+  document.getElementById('mobileServicesSub').classList.toggle('open');
+}
+</script>
+<script>
+(function(){
+  var c=document.querySelector('.cta-banner'); if(!c||!('IntersectionObserver' in window)) return;
+  c.classList.add('cta-anim');
+  new IntersectionObserver(function(e,o){ e.forEach(function(x){ if(x.isIntersecting){ c.classList.add('cta-in'); o.disconnect(); } }); },{threshold:0.25}).observe(c);
+})();
+</script>
+<script>
+// Scroll reveal (same .reveal system used on the Home page)
+(function(){
+  var els=document.querySelectorAll('.reveal'); if(!els.length) return;
+  if(!('IntersectionObserver' in window)||window.matchMedia('(prefers-reduced-motion: reduce)').matches){ els.forEach(function(e){e.classList.add('visible');}); return; }
+  var io=new IntersectionObserver(function(entries){ entries.forEach(function(en){ if(en.isIntersecting){ var t=en.target; t.classList.add('visible'); io.unobserve(t);
+    setTimeout(function(){ t.classList.remove('reveal','visible','from-left','from-right'); t.style.transitionDelay=''; }, 1500); } }); },{threshold:0.12});
+  els.forEach(function(e){ io.observe(e); });
+})();
+</script>
+<script src="../booking-modal.js"></script>
+</body>
+</html>
