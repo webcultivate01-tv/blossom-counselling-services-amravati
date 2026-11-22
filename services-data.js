@@ -102,6 +102,19 @@
       ]
     },
     {
+      homeHide: true, // shown only on the Services page (home shows 2 rows + "View More Services")
+      id: 'career-counselling', name: 'Career Counselling and Guidance', short: 'Career Counselling & Guidance',
+      tag: 'For Students &amp; Adults', icon: 'fa-bullseye',
+      img: "public/services/Career Guidance & Assessment.png",
+      desc: 'Comprehensive career counselling through structured assessments that explore an individual\'s personality, interests, career values, skills, strengths and abilities. By understanding their unique profile, we help students and adults identify suitable career paths, explore opportunities and make informed academic and professional decisions. Our goal is to help individuals choose careers that align with their potential, interests and personal aspirations.',
+      items: [
+        'Structured assessments of personality and interests', 'Career values, skills and strengths mapping',
+        'Identifying suitable career paths', 'Exploring academic and professional opportunities',
+        'Career guidance for students', 'Career guidance and transitions for adults',
+        'Informed academic and professional decision-making', 'Aligning careers with potential and aspirations'
+      ]
+    },
+    {
       id: 'workshops', name: 'Workshops, Seminars and Motivational Speaking', short: 'Workshops, Seminars & Speaking',
       tag: 'For Groups &amp; Organisations', icon: 'fa-chalkboard-user',
       img: "public/services/Workshops, Seminars & Speaking.png",
@@ -222,12 +235,19 @@
   function renderHome() {
     var grid = $('.services-grid-home');
     if (!grid) return;
-    grid.innerHTML = SERVICES.map(function (s) {
+    grid.innerHTML = SERVICES.filter(function (s) { return !s.homeHide; }).map(function (s) {
       return '<a class="service-card-home reveal" href="' + link(s, false) + '">' +
         '<div class="service-card-img-wrap"><img class="service-card-img" src="' + CARD(s.img) + '" alt="' + esc(s.name) + '"></div>' +
         '<div class="service-card-body"><h4>' + esc(s.short) + '</h4><p>' + esc(shortDesc(s.desc)) + '</p>' +
         '<span class="service-read-btn">Read More <i class="fa-solid fa-arrow-right"></i></span></div></a>';
     }).join('');
+    if (!$('.services-more-wrap')) {
+      var wrap = document.createElement('div');
+      wrap.className = 'services-more-wrap';
+      wrap.style.cssText = 'text-align:center;margin-top:36px';
+      wrap.innerHTML = '<a class="btn-primary" href="' + PG + 'services.html">View More Services <i class="fa-solid fa-arrow-right"></i></a>';
+      grid.parentNode.insertBefore(wrap, grid.nextSibling);
+    }
   }
   function shortDesc(d) { var first = d.split('. ')[0]; return first.replace(/\.$/, '') + '.'; }
 

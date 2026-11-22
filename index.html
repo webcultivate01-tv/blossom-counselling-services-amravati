@@ -7,6 +7,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500;600&family=Rubik:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
 <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="approach.css">
 <style>
 /* ===== HOME PAGE STYLES ===== */
 .hero-wrap-bg { background: linear-gradient(135deg,#e8e6fa 0%,#f6f5fd 100%); }
@@ -345,7 +346,13 @@
 .why-card h5 { font-size:17px; font-weight:600; color:var(--text); margin-bottom:5px; }
 .why-card p { font-size:17px; color:var(--muted); line-height:1.6; }
 .why-home { padding:80px 5%; background:var(--primary-light); }
-.why-home-grid { max-width:1200px; margin:40px auto 0; display:grid; grid-template-columns:repeat(4,1fr); gap:20px; }
+.why-home-intro { max-width:800px; margin:0 auto; text-align:center; font-size:18px; line-height:1.85; color:var(--muted); }
+.why-home-close { max-width:900px; margin:40px auto 0; padding:28px 32px; border-radius:18px; background:linear-gradient(135deg,var(--primary-dark) 0%,var(--primary) 100%); color:#fff; text-align:center; box-shadow:0 18px 44px rgba(90,92,184,.28); }
+.why-home-close i { font-size:24px; color:#ffe9a8; margin-bottom:10px; display:block; }
+.why-home-close p { font-size:18px; line-height:1.8; color:rgba(255,255,255,.95); }
+.why-home-grid { max-width:1200px; margin:40px auto 0; display:grid; grid-template-columns:repeat(3,1fr); gap:22px; }
+.why-home-card { text-align:left !important; }
+.why-home-icon { margin-left:0 !important; }
 .why-home-card { background:#fff; border:1px solid var(--border); border-top:3px solid var(--primary-mid); border-radius:16px; padding:28px 22px; text-align:center; transition:all .3s; }
 .why-home-card:hover { transform:translateY(-6px); box-shadow:0 14px 34px rgba(90,92,184,.18); border-top-color:var(--primary); }
 .why-home-icon { width:56px; height:56px; margin:0 auto 16px; border-radius:50%; background:var(--primary-light); color:var(--primary-dark); display:flex; align-items:center; justify-content:center; font-size:22px; }
@@ -448,8 +455,8 @@
   </div>
   <div class="topbar-right">
     <a href="https://www.instagram.com/psychologist_nimisha" target="_blank" aria-label="Instagram" class="tb-ig"><i class="fa-brands fa-instagram"></i></a>
-    <a href="#" aria-label="Facebook" class="tb-fb"><i class="fa-brands fa-facebook-f"></i></a>
-    <a href="https://youtube.com/" target="_blank" aria-label="YouTube" class="tb-yt"><i class="fa-brands fa-youtube"></i></a>
+    <a href="https://www.facebook.com/share/1ERCPJFf24/" target="_blank" rel="noopener" aria-label="Facebook" class="tb-fb"><i class="fa-brands fa-facebook-f"></i></a>
+    <a href="https://www.youtube.com/@blossomcounselingservice" target="_blank" aria-label="YouTube" class="tb-yt"><i class="fa-brands fa-youtube"></i></a>
     <a href="https://www.linkedin.com/in/nimishasaboo/" target="_blank" aria-label="LinkedIn" class="tb-in"><i class="fa-brands fa-linkedin-in"></i></a>
     <a href="https://wa.me/919423425900" target="_blank" rel="noopener" aria-label="WhatsApp" class="tb-wa"><i class="fa-brands fa-whatsapp"></i></a>
   </div>
@@ -524,7 +531,7 @@
   <div class="hero-img">
     <img src="public/homeHero.png" alt="Counselling session" fetchpriority="high">
     <div class="hero-badge b1"><i class="fa-solid fa-shield-heart"></i><span><b>100% Confidential</b><small>Safe &amp; private space</small></span></div>
-    <div class="hero-badge b2"><i class="fa-solid fa-user-doctor"></i><span><b>Expert Counsellors</b><small>Caring professionals</small></span></div>
+    <div class="hero-badge b2"><i class="fa-solid fa-award"></i><span><b>12+ Years of Experience</b><small>Evidence-based counselling</small></span></div>
   </div>
 </section></div>
 
@@ -560,7 +567,7 @@
   <div class="about-strip-inner">
     <div class="about-strip-visual reveal from-left">
       <div class="about-img-wrap">
-        <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=600&q=80" alt="Professional counselling session at Blossom Counseling">
+        <img src="public/founder.png" alt="Nimisha P. Saboo, Counseling Psychologist and founder of Blossom Counseling">
       </div>
     </div>
     <div class="about-strip-text reveal from-right">
@@ -570,8 +577,6 @@
       <p>With over <strong>12+ years of experience</strong>, I strive to provide a safe, compassionate and non-judgmental space where individuals feel heard, understood and professionally supported. Through evidence-based counselling, I aim to help people understand their struggles, develop healthier ways of coping and move towards a more fulfilling life.</p>
       <p><em>Because seeking help is not a weakness, and you don't have to struggle alone.</em></p>
       <div class="check-list">
-        <div class="check-item"><div class="check-icon">✓</div>Home Visit Available</div>
-        <div class="check-item"><div class="check-icon">✓</div>Certified Counsellors</div>
         <div class="check-item"><div class="check-icon">✓</div>Confidential Sessions</div>
         <div class="check-item"><div class="check-icon">✓</div>All Age Groups</div>
       </div>
@@ -655,12 +660,55 @@
   </div>
 </section>
 
+<!-- Therapeutic Approach -->
+<section class="approach-section" id="our-approach">
+  <div class="section-center reveal">
+    <div class="section-tag">How We Help</div>
+    <h2 class="section-title">Our Therapeutic Approach</h2>
+  </div>
+  <div class="approach-wrap">
+    <div class="approach-intro reveal">
+      <span class="ai-label">An Integrative &amp; Eclectic Approach</span>
+      <p>I follow an <strong>integrative and eclectic approach</strong> to counselling, drawing upon different therapeutic models and psychological frameworks. The approach is tailored to each individual's concerns, needs and therapeutic goals.</p>
+    </div>
+
+    <div class="approach-group">
+      <h3 class="approach-group-title reveal"><span><i class="fa-solid fa-brain"></i>Therapeutic Approaches</span></h3>
+      <div class="approach-grid">
+        <div class="approach-card reveal"><span class="ac-num">01</span><div class="ac-badge">CBT</div><h4>Cognitive Behavioural Therapy</h4><p>Understanding and modifying unhelpful thought patterns and behaviours.</p></div>
+        <div class="approach-card reveal" style="transition-delay:.08s"><span class="ac-num">02</span><div class="ac-badge">REBT</div><h4>Rational Emotive Behaviour Therapy</h4><p>Identifying and challenging irrational beliefs that contribute to emotional distress.</p></div>
+        <div class="approach-card reveal" style="transition-delay:.16s"><span class="ac-num">03</span><div class="ac-badge">ACT</div><h4>Acceptance and Commitment Therapy</h4><p>Developing psychological flexibility and responding to difficult thoughts and emotions in healthier ways.</p></div>
+        <div class="approach-card reveal" style="transition-delay:.24s"><span class="ac-num">04</span><div class="ac-badge">MI</div><h4>Motivational Interviewing</h4><p>Strengthening an individual's motivation and readiness to bring about positive change.</p></div>
+        <div class="approach-card reveal"><span class="ac-num">05</span><div class="ac-badge">TA</div><h4>Transactional Analysis</h4><p>Understanding patterns of thinking, feeling and relating through ego states and interpersonal interactions.</p></div>
+        <div class="approach-card reveal" style="transition-delay:.08s"><span class="ac-num">06</span><div class="ac-badge">DBT</div><h4>Dialectical Behaviour Therapy</h4><p>Developing skills in emotional regulation, distress tolerance, mindfulness and interpersonal effectiveness.</p></div>
+        <div class="approach-card reveal" style="transition-delay:.16s"><span class="ac-num">07</span><div class="ac-badge"><i class="fa-solid fa-hand-holding-heart"></i></div><h4>Supportive Counselling</h4><p>Providing an empathetic, non-judgmental space to explore concerns and develop healthier coping strategies.</p></div>
+      </div>
+    </div>
+
+    <div class="approach-group">
+      <h3 class="approach-group-title reveal"><span><i class="fa-solid fa-heart"></i>Relationship Counselling Frameworks</span></h3>
+      <div class="approach-grid rel">
+        <div class="approach-card reveal"><span class="ac-num">08</span><div class="ac-badge"><i class="fa-solid fa-people-arrows"></i></div><div><h4>Gottman-Informed Approach</h4><p>Drawing on relationship research to improve communication, manage conflicts and strengthen emotional connection.</p></div></div>
+        <div class="approach-card reveal" style="transition-delay:.1s"><span class="ac-num">09</span><div class="ac-badge"><i class="fa-solid fa-link"></i></div><div><h4>Attachment Theory</h4><p>Exploring how early attachment experiences influence adult relationships, emotional needs, trust and intimacy.</p></div></div>
+      </div>
+    </div>
+
+    <div class="approach-cta reveal">
+      <div>
+        <h3>Not sure which approach is right for you?</h3>
+        <p>In your first session, we will understand your concerns together and choose the approach that suits you best.</p>
+      </div>
+      <a href="pages/contact.html">Book Appointment <i class="fa-solid fa-arrow-right"></i></a>
+    </div>
+  </div>
+</section>
+
 <!-- Home Contact Section -->
 <section class="home-contact-section">
   <div class="home-contact-inner">
     <div class="home-contact-left reveal from-left">
       <div class="home-contact-tag">Appointment</div>
-      <h2>Book Your Consultation with<br>Our Expert Today</h2>
+      <h2>Book Your Appointment with<br>Us Today</h2>
       <div class="home-contact-info">
         <div class="hci-item">
           <div class="hci-icon">
@@ -770,27 +818,42 @@
     <div class="section-tag">Why Choose Blossom Counseling</div>
     <h2 class="section-title">What Makes Us Different</h2>
   </div>
+  <p class="why-home-intro reveal">At Blossom Counseling Services, we believe that effective counselling requires more than just listening; it requires understanding, professional knowledge and the right therapeutic guidance.</p>
   <div class="why-home-grid">
     <div class="why-home-card reveal">
-      <div class="why-home-icon"><i class="fa-solid fa-user-graduate"></i></div>
-      <h5>Certified Experts</h5>
-      <p>All our counsellors are professionally certified with years of hands-on experience.</p>
+      <div class="why-home-icon"><i class="fa-solid fa-microscope"></i></div>
+      <h5>Science Over Assumptions</h5>
+      <p>Our practice is grounded in scientifically researched and evidence-based psychological approaches. We believe in understanding the root of concerns rather than relying on myths, assumptions or quick fixes.</p>
     </div>
     <div class="why-home-card reveal">
-      <div class="why-home-icon"><i class="fa-solid fa-lock"></i></div>
-      <h5>100% Confidential</h5>
-      <p>Every session is completely private. Your trust and privacy are our top priority.</p>
+      <div class="why-home-icon"><i class="fa-solid fa-route"></i></div>
+      <h5>A Personalised Therapeutic Journey</h5>
+      <p>We follow an integrative and eclectic approach, drawing upon different therapeutic models to suit each individual's unique needs rather than applying the same method to everyone.</p>
     </div>
     <div class="why-home-card reveal">
-      <div class="why-home-icon"><i class="fa-solid fa-house-chimney-medical"></i></div>
-      <h5>Home Visits</h5>
-      <p>Can't visit us? We come to you. Home visit counselling available across Amravati.</p>
+      <div class="why-home-icon"><i class="fa-solid fa-magnifying-glass-chart"></i></div>
+      <h5>Understanding Beyond Symptoms</h5>
+      <p>We look beyond what a person is experiencing on the surface and explore the underlying thoughts, emotions, experiences and relationship patterns contributing to their difficulties.</p>
     </div>
     <div class="why-home-card reveal">
-      <div class="why-home-icon"><i class="fa-solid fa-people-roof"></i></div>
-      <h5>All Age Groups</h5>
-      <p>From children to senior citizens — we have specialized support for every stage of life.</p>
+      <div class="why-home-icon"><i class="fa-solid fa-hand-holding-heart"></i></div>
+      <h5>A Space Without Labels or Judgement</h5>
+      <p>You are not defined by your struggles, diagnosis, background or circumstances. Every individual deserves to be heard and treated with dignity and respect.</p>
     </div>
+    <div class="why-home-card reveal">
+      <div class="why-home-icon"><i class="fa-solid fa-user-doctor"></i></div>
+      <h5>Professional Yet Approachable</h5>
+      <p>We combine professional expertise with warmth, empathy and genuine human connection, making counselling a comfortable and meaningful experience.</p>
+    </div>
+    <div class="why-home-card reveal">
+      <div class="why-home-icon"><i class="fa-solid fa-people-group"></i></div>
+      <h5>Mental Health Support for Everyone</h5>
+      <p>We believe counselling should be accessible to ordinary people from all walks of life. Seeking psychological support should never be considered a luxury or a privilege.</p>
+    </div>
+  </div>
+  <div class="why-home-close reveal">
+    <i class="fa-solid fa-seedling"></i>
+    <p>At Blossom, our aim is not simply to help you get through a difficult phase, but to help you understand yourself better, develop healthier patterns and build the emotional skills to navigate life with greater confidence.</p>
   </div>
 </section>
 
@@ -912,36 +975,71 @@
   <div class="faq-layout">
   <div class="faq-grid">
     <div class="faq-item reveal" onclick="toggleFaq(this)">
-      <div class="faq-q">What types of counselling services do you offer?<span class="faq-icon">+</span></div>
-      <div class="faq-a">We offer a wide range of counselling services including Children Counseling, Marriage Counseling, Senior Citizen Counseling, Personal Counseling, Relationship Counseling, Financial Counseling, Stress &amp; Anxiety Management, and Depression Support.</div>
+      <div class="faq-q">What is counselling, and how can it help me?<span class="faq-icon">+</span></div>
+      <div class="faq-a">Counselling is a professional process that helps individuals understand their thoughts, emotions, behaviours and life experiences. It provides guidance and psychological support to help you manage challenges, develop healthier coping strategies and improve your emotional well-being.</div>
     </div>
     <div class="faq-item reveal" onclick="toggleFaq(this)">
-      <div class="faq-q">Do you offer home visit counselling sessions?<span class="faq-icon">+</span></div>
-      <div class="faq-a">Yes! We offer home visit counselling sessions for clients who prefer the comfort of their own home. We also visit schools, colleges, and offices. You can select your preferred appointment type when booking.</div>
+      <div class="faq-q">Do I need to have a serious mental health problem to seek counselling?<span class="faq-icon">+</span></div>
+      <div class="faq-a">Not at all. Counselling is not only for people experiencing severe psychological difficulties. You can seek support for everyday stress, overthinking, relationship concerns, self-doubt, personal growth, life transitions or simply to understand yourself better.</div>
     </div>
     <div class="faq-item reveal" onclick="toggleFaq(this)">
-      <div class="faq-q">How do I book an appointment?<span class="faq-icon">+</span></div>
-      <div class="faq-a">You can book an appointment directly through our website by filling out the booking form on the Contact page, or by calling us at +91 94234 25900. You can also reach us on WhatsApp.</div>
+      <div class="faq-q">What kind of concerns can I seek help for?<span class="faq-icon">+</span></div>
+      <div class="faq-a">We offer counselling for concerns related to anxiety, overthinking, depression, emotional distress, self-esteem, childhood experiences, relationships, marriage, parenting, behavioural challenges and other personal or psychological difficulties.</div>
     </div>
     <div class="faq-item reveal" onclick="toggleFaq(this)">
-      <div class="faq-q">What are your working hours?<span class="faq-icon">+</span></div>
-      <div class="faq-a">We are open Monday to Saturday from 8:30 AM to 9:30 PM, and on Sundays from 10:00 AM to 8:00 PM. We try to accommodate flexible timings for working professionals.</div>
+      <div class="faq-q">How do I know if I need counselling?<span class="faq-icon">+</span></div>
+      <div class="faq-a">If emotional difficulties, recurring thoughts, relationship problems or stressful experiences are affecting your daily life, relationships or overall well-being, counselling may help. You do not have to wait until things become overwhelming to seek support.</div>
     </div>
     <div class="faq-item reveal" onclick="toggleFaq(this)">
-      <div class="faq-q">Is the counselling session confidential?<span class="faq-icon">+</span></div>
-      <div class="faq-a">Absolutely. All counselling sessions at Blossom Counseling are completely confidential. We follow strict professional ethics and your personal information is never shared with anyone without your consent.</div>
+      <div class="faq-q">What happens during the first counselling session?<span class="faq-icon">+</span></div>
+      <div class="faq-a">The first session generally involves understanding your concerns, personal experiences and expectations from counselling. It is an opportunity for you to share what you are going through, ask questions and collaboratively identify areas you would like to work on.</div>
+    </div>
+    <div class="faq-item reveal" onclick="toggleFaq(this)">
+      <div class="faq-q">How long does each counselling session last?<span class="faq-icon">+</span></div>
+      <div class="faq-a">Each individual counselling session lasts approximately 60 minutes.</div>
+    </div>
+    <div class="faq-item reveal" onclick="toggleFaq(this)">
+      <div class="faq-q">How many sessions will I need?<span class="faq-icon">+</span></div>
+      <div class="faq-a">The number of sessions varies from person to person, depending on the nature of the concerns, individual needs and therapeutic goals. Counselling is a collaborative process, and progress is reviewed along the way.</div>
+    </div>
+    <div class="faq-item reveal" onclick="toggleFaq(this)">
+      <div class="faq-q">Are counselling sessions confidential?<span class="faq-icon">+</span></div>
+      <div class="faq-a">Yes. Confidentiality is an essential part of the counselling process. Your personal information and what you share during sessions are treated with respect and privacy, subject to professional and legal exceptions to confidentiality.</div>
     </div>
   </div>
-  <div class="faq-slider reveal" id="faqSlider">
-    <div class="faq-slides">
-      <div class="faq-slide active"><img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=800&q=80" alt="Counselling session"><div class="faq-cap">Caring, confidential guidance</div></div>
-      <div class="faq-slide"><img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=800&q=80" alt="Couple counselling"><div class="faq-cap">Relationship &amp; marriage support</div></div>
-      <div class="faq-slide"><img src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=800&q=80" alt="Children counselling"><div class="faq-cap">Helping children grow confidently</div></div>
-      <div class="faq-slide"><img src="https://images.unsplash.com/photo-1581579438747-1dc8d17bbce4?w=800&q=80" alt="Senior citizen counselling"><div class="faq-cap">Compassionate senior care</div></div>
+  <div class="faq-grid">
+    <div class="faq-item reveal" onclick="toggleFaq(this)">
+      <div class="faq-q">Do you offer online counselling?<span class="faq-icon">+</span></div>
+      <div class="faq-a">Yes. We offer both online and in-person counselling sessions. Online sessions allow individuals to access professional psychological support from the comfort and privacy of their own space.</div>
     </div>
-    <button class="faq-arrow prev" aria-label="Previous">&#8249;</button>
-    <button class="faq-arrow next" aria-label="Next">&#8250;</button>
-    <div class="faq-sdots"></div>
+    <div class="faq-item reveal" onclick="toggleFaq(this)">
+      <div class="faq-q">What are the counselling fees?<span class="faq-icon">+</span></div>
+      <div class="faq-a">The fee for an individual 60-minute counselling session is ₹1,500. A discounted five-session package is also available at ₹6,000, offering a 20% discount on the regular fee.</div>
+    </div>
+    <div class="faq-item reveal" onclick="toggleFaq(this)">
+      <div class="faq-q">Do you provide counselling for children and adolescents?<span class="faq-icon">+</span></div>
+      <div class="faq-a">Yes. We offer counselling support for children and adolescents dealing with emotional, behavioural, social, academic and developmental challenges. Parental involvement may be included whenever appropriate and beneficial.</div>
+    </div>
+    <div class="faq-item reveal" onclick="toggleFaq(this)">
+      <div class="faq-q">Do you provide relationship and marital counselling?<span class="faq-icon">+</span></div>
+      <div class="faq-a">Yes. We support individuals and couples in navigating communication difficulties, conflicts, trust issues, emotional disconnection and recurring relationship patterns.</div>
+    </div>
+    <div class="faq-item reveal" onclick="toggleFaq(this)">
+      <div class="faq-q">Do you offer career counselling for adults as well as students?<span class="faq-icon">+</span></div>
+      <div class="faq-a">Yes. Career counselling is available for both students and adults. Through structured assessments of personality, interests, values, skills and abilities, we help individuals explore suitable career options and make informed academic or professional decisions.</div>
+    </div>
+    <div class="faq-item reveal" onclick="toggleFaq(this)">
+      <div class="faq-q">Will counselling involve medication?<span class="faq-icon">+</span></div>
+      <div class="faq-a">Counselling focuses on psychological support and therapeutic interventions. A counselling psychologist does not prescribe medication. If a psychiatric consultation or medication assessment is needed, an appropriate referral can be recommended.</div>
+    </div>
+    <div class="faq-item reveal" onclick="toggleFaq(this)">
+      <div class="faq-q">Is everything I share judged or criticised?<span class="faq-icon">+</span></div>
+      <div class="faq-a">No. Counselling is intended to be a safe and non-judgmental space. You can discuss your thoughts, emotions and experiences openly, knowing that you will be treated with empathy, respect and understanding.</div>
+    </div>
+    <div class="faq-item reveal" onclick="toggleFaq(this)">
+      <div class="faq-q">How can I book an appointment?<span class="faq-icon">+</span></div>
+      <div class="faq-a">You can contact Blossom Counseling Services through WhatsApp or the contact form on our website to enquire about availability and schedule an appointment.</div>
+    </div>
   </div>
   </div>
 </section>
@@ -1007,11 +1105,11 @@
         <li class="footer-contact-link"><i class="fa-brands fa-whatsapp"></i><a href="https://wa.me/919423425900" target="_blank">WhatsApp Us</a></li>
 </ul>
       <div class="footer-socials">
-        <a href="#" aria-label="Facebook" class="fs-fb"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="https://www.facebook.com/share/1ERCPJFf24/" target="_blank" rel="noopener" aria-label="Facebook" class="fs-fb"><i class="fa-brands fa-facebook-f"></i></a>
         <a href="https://www.instagram.com/psychologist_nimisha" target="_blank" aria-label="Instagram" class="fs-ig"><i class="fa-brands fa-instagram"></i></a>
         <a href="https://wa.me/919423425900" target="_blank" aria-label="WhatsApp" class="fs-wa"><i class="fa-brands fa-whatsapp"></i></a>
         <a href="https://www.linkedin.com/in/nimishasaboo/" target="_blank" aria-label="LinkedIn" class="fs-in"><i class="fa-brands fa-linkedin-in"></i></a>
-        <a href="https://youtube.com/" target="_blank" aria-label="YouTube" class="fs-yt"><i class="fa-brands fa-youtube"></i></a>
+        <a href="https://www.youtube.com/@blossomcounselingservice" target="_blank" aria-label="YouTube" class="fs-yt"><i class="fa-brands fa-youtube"></i></a>
       </div>      <div class="footer-map">
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d232.91970025247656!2d77.75143465873889!3d20.92377468773551!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bd6a5811d5a1ae3%3A0xed7689adac2f353b!2sBlossom%20Counseling%20Services!5e0!3m2!1sen!2sin!4v1795083498727!5m2!1sen!2sin" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Blossom Counseling Location"></iframe>
       </div>
@@ -1138,16 +1236,6 @@ function toggleFaq(item){
   document.querySelectorAll('.faq-item.open').forEach(function(el){ el.classList.remove('open'); });
   if(!isOpen) item.classList.add('open');
 }
-(function(){
-  var box=document.getElementById('faqSlider'); if(!box) return;
-  var slides=box.querySelectorAll('.faq-slide'), dotsBox=box.querySelector('.faq-sdots'), i=0, t, dots=[];
-  slides.forEach(function(_,n){ var d=document.createElement('span'); if(n===0) d.className='active'; d.onclick=function(){go(n);start();}; dotsBox.appendChild(d); dots.push(d); });
-  function go(n){ slides[i].classList.remove('active'); dots[i].classList.remove('active'); i=(n+slides.length)%slides.length; slides[i].classList.add('active'); dots[i].classList.add('active'); }
-  function start(){ clearInterval(t); t=setInterval(function(){go(i+1);},4000); }
-  box.querySelector('.prev').onclick=function(){go(i-1);start();};
-  box.querySelector('.next').onclick=function(){go(i+1);start();};
-  start();
-})();
 </script>
 <script>
 (function(){

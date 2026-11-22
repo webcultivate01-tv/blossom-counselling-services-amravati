@@ -64,13 +64,82 @@ class PublicController extends Controller
             $prefDate = (string) ($_POST['preferred_date'] ?? '');
             $pd = DateTime::createFromFormat('Y-m-d', $prefDate);
             $prefDate = ($pd && $pd->format('Y-m-d') === $prefDate && $prefDate >= date('Y-m-d') && $prefDate <= date('Y-m-d', strtotime('+15 days'))) ? $prefDate : '';
-            Appointment::create([
+            $id = Appointment::create([
                 'name' => $name, 'phone' => $phone, 'email' => $email, 'message' => $message,
                 'service' => $service, 'appointment_type' => $apptType, 'preferred_date' => $prefDate, 'ip' => $ip,
             ]);
+
+            // Reply to the visitor first, then email the admin so the form never waits on SMTP.
+            http_response_code(200);
+            header('Content-Type: application/json; charset=utf-8');
+            header('Cache-Control: no-store');
+            header('Connection: close');
+            $body = json_encode(['ok' => true]);
+            header('Content-Length: ' . strlen($body));
+            echo $body;
+            while (ob_get_level() > 0) {
+                ob_end_flush();
+            }
+            flush();
+            if (function_exists('fastcgi_finish_request')) {
+                fastcgi_finish_request();
+            }
+            ignore_user_abort(true);
+
+            $this->notifyAdminOfAppointment($id, [
+                'name' => $name, 'phone' => $phone, 'email' => $email, 'message' => $message,
+                'service' => $service, 'type' => $apptType, 'date' => $prefDate,
+            ]);
+            exit;
         }
 
         $this->json(['ok' => true]);
+    }
+
+    /**
+     * Emails the admin about a new booking. Never throws – a mail failure must not
+     * affect the booking, which is already saved.
+     */
+    private function notifyAdminOfAppointment(int $id, array $a): void
+    {
+        if (!Mailer::isConfigured() || ADMIN_NOTIFY_EMAIL === '') {
+            return;
+        }
+
+        try {
+            $scheme = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') ? 'https' : 'http';
+            $link = $scheme . '://' . ($_SERVER['HTTP_HOST'] ?? 'localhost') . url('action=appointment&id=' . $id);
+            $prefDate = $a['date'] !== '' ? date('d M Y', strtotime($a['date'])) : 'Not specified';
+
+            $rows = [
+                'Name' => $a['name'],
+                'Phone' => $a['phone'],
+                'Email' => $a['email'] !== '' ? $a['email'] : '—',
+                'Service' => $a['service'],
+                'Appointment type' => $a['type'],
+                'Preferred date' => $prefDate,
+                'Message' => $a['message'] !== '' ? $a['message'] : '—',
+            ];
+
+            $text = "New appointment booking received on " . date('d M Y, h:i A') . "\n\n";
+            $html = '<div style="font-family:Arial,sans-serif;max-width:560px;margin:auto;color:#222">'
+                . '<h2 style="color:#6b3fa0;margin:0 0 4px">New appointment booking</h2>'
+                . '<p style="margin:0 0 16px;color:#666">Received ' . h(date('d M Y, h:i A')) . '</p>'
+                . '<table style="width:100%;border-collapse:collapse">';
+            foreach ($rows as $label => $value) {
+                $text .= "$label: $value\n";
+                $html .= '<tr><td style="padding:8px;border-bottom:1px solid #eee;color:#666;width:150px;vertical-align:top">'
+                    . h($label) . '</td><td style="padding:8px;border-bottom:1px solid #eee">'
+                    . nl2br(h($value)) . '</td></tr>';
+            }
+            $text .= "\nOpen in admin panel: $link\n";
+            $html .= '</table><p style="margin-top:20px"><a href="' . h($link) . '" style="background:#6b3fa0;color:#fff;'
+                . 'padding:10px 18px;border-radius:6px;text-decoration:none">View in admin panel</a></p></div>';
+
+            Mailer::send(ADMIN_NOTIFY_EMAIL, 'New appointment: ' . $a['name'] . ' – ' . $a['service'], $html, $text);
+        } catch (Throwable $e) {
+            error_log('Appointment notification email failed: ' . $e->getMessage());
+        }
     }
 
     public function api(): void

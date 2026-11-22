@@ -27,6 +27,8 @@ define('SMTP_PORT', (int) Env::get('SMTP_PORT', '465'));
 define('SMTP_USER', Env::get('SMTP_USER', ''));
 define('SMTP_PASS', str_replace(' ', '', Env::get('SMTP_PASS', '')));
 define('SMTP_FROM_NAME', Env::get('SMTP_FROM_NAME', 'Blossom Counseling'));
+// Where "new appointment" alerts are sent. Defaults to the SMTP Gmail account itself.
+define('ADMIN_NOTIFY_EMAIL', trim(Env::get('ADMIN_NOTIFY_EMAIL', '')) ?: SMTP_USER);
 
 // Absolute URL path of the admin folder with trailing slash (e.g. "/admin/").
 // Keeps CSS/logo/redirect links working even when visited as "/admin" (no slash).

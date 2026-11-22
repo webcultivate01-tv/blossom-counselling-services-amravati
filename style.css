@@ -252,12 +252,16 @@ button { cursor:pointer; font-family:var(--font-body); border:none; outline:none
 /* ===== COMMON ===== */
 .section-tag {
   display: inline-flex; align-items: center; gap: 8px;
-  font-size:14px; font-weight: 600;
+  font-size:13px; font-weight: 600;
   color: var(--primary-dark);
-  text-transform: uppercase; letter-spacing: 1.5px;
-  margin-bottom: 12px;
+  text-transform: uppercase; letter-spacing: 1.8px;
+  background: var(--primary-light);
+  border: 1px solid var(--primary-mid);
+  padding: 8px 20px;
+  border-radius: 50px;
+  box-shadow: 0 2px 10px rgba(90,92,184,0.08);
+  margin-bottom: 16px;
 }
-.section-tag::before { content:''; display:block; width:24px; height:2px; background:var(--gold); border-radius:2px; }
 .section-title { font-family:var(--font-display); font-size:clamp(26px,4vw,38px); font-weight:700; color:var(--text); line-height:1.2; margin-bottom:14px; }
 .section-sub { font-size:17px; color:var(--muted); line-height:1.8; max-width:580px; margin-bottom:40px; }
 .section-center { text-align:center; }
@@ -552,7 +556,7 @@ footer {
 .faq-section .section-center { margin-bottom: 50px; }
 .faq-layout {
   max-width: 1320px; margin: 0 auto;
-  display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 40px; align-items: start;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 24px; align-items: start;
 }
 .faq-slider {
   position: sticky; top: 100px;
@@ -717,10 +721,10 @@ footer {
 .topbar-right .tb-wa { background:#25D366; }
 
 /* ===== LOGO IMAGE ===== */
-.logo-img { height:76px; width:auto; display:block; }
+.logo-img { height:64px; width:auto; display:block; }
 .footer-logo-img { height:84px; width:auto; display:block; background:#fff; border-radius:12px; padding:4px 10px; }
-@media (max-width: 768px) { .logo-img { height:50px; } .footer-logo-img { height:66px; } }
-@media (max-width: 480px) { .logo-img { height:46px; } }
+@media (max-width: 768px) { .logo-img { height:42px; } .footer-logo-img { height:66px; } }
+@media (max-width: 480px) { .logo-img { height:38px; } }
 
 
 /* ===== Services page: coverage lists ===== */

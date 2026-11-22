@@ -8,13 +8,14 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500;600&family=Rubik:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="../approach.css">
 <style>
 /* About Hero */
 .about-page-hero {
   position: relative; overflow: hidden;
   height: 70vh; min-height: 420px; box-sizing: border-box; padding: 30px 5% 90px;
   display: flex; align-items: center; justify-content: center; text-align: center;
-  background: url('https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=1800&auto=format&fit=crop&q=70') center/cover no-repeat;
+  background: url('../public/aboutHero.png') center 12%/cover no-repeat;
 }
 .about-page-hero::before {
   content: ''; position: absolute; inset: 0;
@@ -24,14 +25,14 @@
   content: ''; position: absolute; width: 420px; height: 420px; border-radius: 50%;
   right: -120px; bottom: -160px; background: rgba(255,255,255,0.08);
 }
-.about-hero-text { position: relative; z-index: 1; max-width: 780px; color: #fff; animation: heroIn .9s cubic-bezier(.22,1,.36,1) both; }
+.about-hero-text { position: relative; z-index: 1; max-width: 1000px; color: #fff; animation: heroIn .9s cubic-bezier(.22,1,.36,1) both; }
 .about-hero-text .breadcrumb { display:inline-flex; align-items:center; gap:10px; font-size:15px; color:rgba(255,255,255,0.85); margin-bottom:14px; padding:6px 16px; border-radius:30px; background:rgba(255,255,255,0.14); backdrop-filter:blur(4px); }
 .about-hero-text .breadcrumb a { color:#fff; font-weight:500; }
 .about-hero-text .breadcrumb i { font-size:11px; opacity:.8; }
-.about-hero-eyebrow { display:block; font-size:14px; font-weight:600; letter-spacing:2.5px; text-transform:uppercase; color:rgba(255,255,255,0.8); margin-bottom:14px; }
+.about-hero-eyebrow { display:inline-block; font-size:14px; font-weight:600; letter-spacing:2.5px; text-transform:uppercase; color:#fff; margin-bottom:16px; padding:8px 20px; border-radius:30px; background:rgba(255,255,255,0.14); border:1px solid rgba(255,255,255,0.35); backdrop-filter:blur(4px); }
 .about-hero-text h1 { font-family:var(--font-display); font-size:clamp(30px,4.6vw,54px); font-weight:700; color:#fff; margin-bottom:14px; line-height:1.12; }
 .about-hero-text h1 em { font-style:normal; color:#ffe9a8; }
-.about-hero-text p { font-size:18px; color:rgba(255,255,255,0.92); line-height:1.8; max-width:640px; margin:0 auto 22px; }
+.about-hero-text p { font-size:18px; color:rgba(255,255,255,0.92); line-height:1.8; max-width:940px; margin:0 auto 22px; }
 .about-hero-btns { display:flex; gap:14px; justify-content:center; flex-wrap:wrap; }
 .about-hero-btns a { display:inline-flex; align-items:center; gap:8px; padding:13px 28px; border-radius:40px; font-weight:600; font-size:16px; transition:all .25s; }
 .about-hero-btns .hb-solid { background:#fff; color:var(--primary-dark); }
@@ -261,8 +262,8 @@
   </div>
   <div class="topbar-right">
     <a href="https://www.instagram.com/psychologist_nimisha" target="_blank" aria-label="Instagram" class="tb-ig"><i class="fa-brands fa-instagram"></i></a>
-    <a href="#" aria-label="Facebook" class="tb-fb"><i class="fa-brands fa-facebook-f"></i></a>
-    <a href="https://youtube.com/" target="_blank" aria-label="YouTube" class="tb-yt"><i class="fa-brands fa-youtube"></i></a>
+    <a href="https://www.facebook.com/share/1ERCPJFf24/" target="_blank" rel="noopener" aria-label="Facebook" class="tb-fb"><i class="fa-brands fa-facebook-f"></i></a>
+    <a href="https://www.youtube.com/@blossomcounselingservice" target="_blank" aria-label="YouTube" class="tb-yt"><i class="fa-brands fa-youtube"></i></a>
     <a href="https://www.linkedin.com/in/nimishasaboo/" target="_blank" aria-label="LinkedIn" class="tb-in"><i class="fa-brands fa-linkedin-in"></i></a>
     <a href="https://wa.me/919423425900" target="_blank" rel="noopener" aria-label="WhatsApp" class="tb-wa"><i class="fa-brands fa-whatsapp"></i></a>
   </div>
@@ -324,10 +325,9 @@
 
 <section class="about-page-hero">
   <div class="about-hero-text">
-    <div class="breadcrumb"><a href="../index.html">Home</a> <i class="fa-solid fa-chevron-right"></i> <span>About Us</span></div>
     <span class="about-hero-eyebrow">About Blossom Counseling</span>
-    <h1>Blossom <em>Counseling</em></h1>
-    <p>We are a team of certified, compassionate counsellors dedicated to helping individuals, couples, and families navigate life's challenges with confidence and care.</p>
+    <h1>Evidence-Based Mental Health Support, <em>Accessible to Everyone</em></h1>
+    <p>Blossom Counseling Services is a professional psychological counselling practice dedicated to making evidence-based mental health support accessible to everyone. We provide a safe, compassionate and non-judgmental space where individuals can understand their struggles, build emotional resilience and move towards healthier, more fulfilling lives.</p>
     <div class="about-hero-btns">
       <a class="hb-solid" href="contact.html"><i class="fa-solid fa-calendar-check"></i> Book Appointment</a>
       <a class="hb-ghost" href="services.html"><i class="fa-solid fa-hand-holding-heart"></i> Our Services</a>
@@ -340,7 +340,7 @@
   <div class="about-main-inner">
     <div class="about-main-visual reveal from-left">
       <div class="about-img-frame">
-        <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=800&auto=format&fit=crop&q=70" alt="Counselling session at Blossom Counseling">
+        <img src="../public/founder.png" alt="Nimisha P. Saboo, Counseling Psychologist and founder of Blossom Counseling">
       </div>
       <div class="about-exp-badge"><strong>12+</strong><span>Years of Care</span></div>
     </div>
@@ -353,8 +353,6 @@
         Because seeking help is not a weakness, and you don't have to struggle alone.
       </div>
       <div class="about-checklist">
-        <div class="about-check"><div class="about-check-icon">✓</div><div class="about-check-text"><strong>Home Visit Available</strong> — Professional counselling right at your doorstep</div></div>
-        <div class="about-check"><div class="about-check-icon">✓</div><div class="about-check-text"><strong>Certified Counsellors</strong> — Trained, experienced, and compassionate</div></div>
         <div class="about-check"><div class="about-check-icon">✓</div><div class="about-check-text"><strong>100% Confidential</strong> — Your privacy is our priority</div></div>
         <div class="about-check"><div class="about-check-icon">✓</div><div class="about-check-text"><strong>All Age Groups</strong> — Children, adults, couples, and seniors</div></div>
         <div class="about-check"><div class="about-check-icon">✓</div><div class="about-check-text"><strong>Guidance for Better Job Opportunities</strong> — Career counselling included</div></div>
@@ -477,6 +475,48 @@
   </div>
 </section>
 
+<section class="approach-section alt" id="therapeutic-approach">
+  <div class="section-center reveal">
+    <div class="section-tag">How We Help</div>
+    <h2 class="section-title">Our Therapeutic Approach</h2>
+  </div>
+  <div class="approach-wrap">
+    <div class="approach-intro reveal">
+      <span class="ai-label">An Integrative &amp; Eclectic Approach</span>
+      <p>I follow an <strong>integrative and eclectic approach</strong> to counselling, drawing upon different therapeutic models and psychological frameworks. The approach is tailored to each individual's concerns, needs and therapeutic goals.</p>
+    </div>
+
+    <div class="approach-group">
+      <h3 class="approach-group-title reveal"><span><i class="fa-solid fa-brain"></i>Therapeutic Approaches</span></h3>
+      <div class="approach-grid">
+        <div class="approach-card reveal"><span class="ac-num">01</span><div class="ac-badge">CBT</div><h4>Cognitive Behavioural Therapy</h4><p>Understanding and modifying unhelpful thought patterns and behaviours.</p></div>
+        <div class="approach-card reveal" style="transition-delay:.08s"><span class="ac-num">02</span><div class="ac-badge">REBT</div><h4>Rational Emotive Behaviour Therapy</h4><p>Identifying and challenging irrational beliefs that contribute to emotional distress.</p></div>
+        <div class="approach-card reveal" style="transition-delay:.16s"><span class="ac-num">03</span><div class="ac-badge">ACT</div><h4>Acceptance and Commitment Therapy</h4><p>Developing psychological flexibility and responding to difficult thoughts and emotions in healthier ways.</p></div>
+        <div class="approach-card reveal" style="transition-delay:.24s"><span class="ac-num">04</span><div class="ac-badge">MI</div><h4>Motivational Interviewing</h4><p>Strengthening an individual's motivation and readiness to bring about positive change.</p></div>
+        <div class="approach-card reveal"><span class="ac-num">05</span><div class="ac-badge">TA</div><h4>Transactional Analysis</h4><p>Understanding patterns of thinking, feeling and relating through ego states and interpersonal interactions.</p></div>
+        <div class="approach-card reveal" style="transition-delay:.08s"><span class="ac-num">06</span><div class="ac-badge">DBT</div><h4>Dialectical Behaviour Therapy</h4><p>Developing skills in emotional regulation, distress tolerance, mindfulness and interpersonal effectiveness.</p></div>
+        <div class="approach-card reveal" style="transition-delay:.16s"><span class="ac-num">07</span><div class="ac-badge"><i class="fa-solid fa-hand-holding-heart"></i></div><h4>Supportive Counselling</h4><p>Providing an empathetic, non-judgmental space to explore concerns and develop healthier coping strategies.</p></div>
+      </div>
+    </div>
+
+    <div class="approach-group">
+      <h3 class="approach-group-title reveal"><span><i class="fa-solid fa-heart"></i>Relationship Counselling Frameworks</span></h3>
+      <div class="approach-grid rel">
+        <div class="approach-card reveal"><span class="ac-num">08</span><div class="ac-badge"><i class="fa-solid fa-people-arrows"></i></div><div><h4>Gottman-Informed Approach</h4><p>Drawing on relationship research to improve communication, manage conflicts and strengthen emotional connection.</p></div></div>
+        <div class="approach-card reveal" style="transition-delay:.1s"><span class="ac-num">09</span><div class="ac-badge"><i class="fa-solid fa-link"></i></div><div><h4>Attachment Theory</h4><p>Exploring how early attachment experiences influence adult relationships, emotional needs, trust and intimacy.</p></div></div>
+      </div>
+    </div>
+
+    <div class="approach-cta reveal">
+      <div>
+        <h3>Not sure which approach is right for you?</h3>
+        <p>In your first session, we will understand your concerns together and choose the approach that suits you best.</p>
+      </div>
+      <a href="contact.html">Book Appointment <i class="fa-solid fa-arrow-right"></i></a>
+    </div>
+  </div>
+</section>
+
 <section class="why-about">
   <div class="section-center reveal">
     <div class="section-tag">Why Choose Us</div>
@@ -552,11 +592,11 @@
         <li class="footer-contact-link"><i class="fa-brands fa-whatsapp"></i><a href="https://wa.me/919423425900" target="_blank">WhatsApp Us</a></li>
 </ul>
       <div class="footer-socials">
-        <a href="#" aria-label="Facebook" class="fs-fb"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="https://www.facebook.com/share/1ERCPJFf24/" target="_blank" rel="noopener" aria-label="Facebook" class="fs-fb"><i class="fa-brands fa-facebook-f"></i></a>
         <a href="https://www.instagram.com/psychologist_nimisha" target="_blank" aria-label="Instagram" class="fs-ig"><i class="fa-brands fa-instagram"></i></a>
         <a href="https://wa.me/919423425900" target="_blank" aria-label="WhatsApp" class="fs-wa"><i class="fa-brands fa-whatsapp"></i></a>
         <a href="https://www.linkedin.com/in/nimishasaboo/" target="_blank" aria-label="LinkedIn" class="fs-in"><i class="fa-brands fa-linkedin-in"></i></a>
-        <a href="https://youtube.com/" target="_blank" aria-label="YouTube" class="fs-yt"><i class="fa-brands fa-youtube"></i></a>
+        <a href="https://www.youtube.com/@blossomcounselingservice" target="_blank" aria-label="YouTube" class="fs-yt"><i class="fa-brands fa-youtube"></i></a>
       </div>      <div class="footer-map">
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d232.91970025247656!2d77.75143465873889!3d20.92377468773551!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bd6a5811d5a1ae3%3A0xed7689adac2f353b!2sBlossom%20Counseling%20Services!5e0!3m2!1sen!2sin!4v1795083498727!5m2!1sen!2sin" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Blossom Counseling Location"></iframe>
       </div>
