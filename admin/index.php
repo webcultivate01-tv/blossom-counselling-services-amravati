@@ -127,6 +127,11 @@ try {
     };
 } catch (Throwable $e) {
     http_response_code(500);
-    echo 'Something went wrong. Please try again later.';
     error_log('[Admin Panel] ' . $e->getMessage());
+    if ($action === 'submit' || $action === 'api') {
+        header('Content-Type: application/json; charset=utf-8');
+        echo json_encode(['ok' => false, 'error' => 'Server error. Please try again later or call us.']);
+    } else {
+        echo 'Something went wrong. Please try again later.';
+    }
 }

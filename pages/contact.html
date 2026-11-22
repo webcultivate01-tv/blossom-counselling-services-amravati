@@ -292,7 +292,6 @@
               <label class="form-lbl">Appointment Type</label>
               <select class="form-sel" id="bkType">
                 <option value="">Choose type...</option>
-                <option>Home Visit</option>
                 <option>School &amp; College Visit</option>
                 <option>Office Visit</option>
                 <option>Centre Visit</option>
@@ -542,7 +541,12 @@ function submitContactForm() {
   });
   btn.disabled = true; var label = btn.textContent; btn.textContent = 'Sending…';
   fetch('../admin/index.php?action=submit', { method: 'POST', body: body })
-    .then(function (r) { return r.json(); })
+    .then(function (r) {
+      return r.text().then(function (t) {
+        try { return JSON.parse(t); }
+        catch (x) { throw new Error('Sorry, we could not save your request right now. Please try again shortly or call us.'); }
+      });
+    })
     .then(function (d) {
       if (!d.ok) throw new Error(d.error || 'Something went wrong.');
       document.getElementById('contactFormContent').style.display = 'none';
