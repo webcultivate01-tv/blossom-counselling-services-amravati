@@ -765,41 +765,43 @@
         <div class="hcf-row">
           <div>
             <label class="hcf-label">Full Name</label>
-            <input type="text" class="hcf-input" placeholder="Your full name">
+            <input type="text" class="hcf-input" id="hcfName" placeholder="Your full name">
           </div>
           <div>
             <label class="hcf-label">Phone Number</label>
-            <input type="tel" class="hcf-input" placeholder="+91 XXXXX XXXXX">
+            <input type="tel" class="hcf-input" id="hcfPhone" placeholder="+91 XXXXX XXXXX">
           </div>
         </div>
         <div class="hcf-group">
           <label class="hcf-label">Email Address</label>
-          <input type="email" class="hcf-input" placeholder="email@example.com">
+          <input type="email" class="hcf-input" id="hcfEmail" placeholder="email@example.com">
         </div>
         <div class="hcf-group">
           <label class="hcf-label">Select Services</label>
-          <select class="hcf-select">
+          <select class="hcf-select" id="hcfService">
             <option value="">Select Services</option>
-            <option>Children Counseling</option>
-            <option>Marriage Counseling</option>
-            <option>Senior Citizen Counseling</option>
-            <option>Personal Counseling</option>
-            <option>Relationship Counseling</option>
-            <option>Financial Counseling</option>
-            <option>Stress and Anxiety Management</option>
-            <option>Depression Support</option>
+            <option>Individual Counselling</option>
+            <option>Child and Adolescent Counselling</option>
+            <option>Relationship and Marital Counselling</option>
+            <option>Parenting Counselling and Guidance</option>
+            <option>Women's and Men's Mental Well-being</option>
+            <option>Older Adult Counselling</option>
+            <option>Career Guidance and Psychological Assessment</option>
+            <option>Career Counselling and Guidance</option>
+            <option>Workshops, Seminars and Motivational Speaking</option>
           </select>
         </div>
         <div class="hcf-group">
           <label class="hcf-label">Select Appointment Type</label>
-          <select class="hcf-select">
+          <select class="hcf-select" id="hcfType">
             <option value="">Select Appointment Type</option>
             <option>School &amp; College Visit</option>
             <option>Office Visit</option>
             <option>Centre Visit</option>
           </select>
         </div>
-        <button class="hcf-submit" onclick="submitHCF()">Book Appointment</button>
+        <div id="hcfError" style="display:none;color:#c0392b;font-size:14px;margin:0 0 12px" role="alert"></div>
+        <button class="hcf-submit" id="hcfSubmit" onclick="submitHCF()">Book Appointment</button>
       </div>
       <div id="hcfSuccess" style="display:none;text-align:center;padding:32px 0">
         <div style="font-size:48px;margin-bottom:12px">🙏</div>
@@ -1178,8 +1180,33 @@ if (statsEl) statsObserver.observe(statsEl);
 
 /* ===== HOME CONTACT FORM ===== */
 function submitHCF() {
-  document.getElementById('hcfContent').style.display = 'none';
-  document.getElementById('hcfSuccess').style.display = 'block';
+  var v = function (id) { return document.getElementById(id).value.trim(); };
+  var err = document.getElementById('hcfError'), btn = document.getElementById('hcfSubmit');
+  function fail(m) { err.textContent = m; err.style.display = 'block'; }
+  err.style.display = 'none';
+  if (v('hcfName').length < 2) return fail('Please enter your full name.');
+  if (!/^[0-9+\-\s()]{7,20}$/.test(v('hcfPhone'))) return fail('Please enter a valid phone number.');
+  if (!v('hcfService')) return fail('Please choose a service.');
+  if (!v('hcfType')) return fail('Please choose an appointment type.');
+  var body = new URLSearchParams({
+    type: 'appointment', name: v('hcfName'), phone: v('hcfPhone'), email: v('hcfEmail'),
+    service: v('hcfService'), appointment_type: v('hcfType'), preferred_date: '', message: '', website: ''
+  });
+  btn.disabled = true; var label = btn.textContent; btn.textContent = 'Sending…';
+  fetch('admin/index.php?action=submit', { method: 'POST', body: body })
+    .then(function (r) {
+      return r.text().then(function (t) {
+        try { return JSON.parse(t); }
+        catch (x) { throw new Error('Sorry, we could not save your request right now. Please try again shortly or call us.'); }
+      });
+    })
+    .then(function (d) {
+      if (!d.ok) throw new Error(d.error || 'Something went wrong.');
+      document.getElementById('hcfContent').style.display = 'none';
+      document.getElementById('hcfSuccess').style.display = 'block';
+    })
+    .catch(function (e) { fail((e && e.message) || 'Could not send your request. Please call us instead.'); })
+    .then(function () { btn.disabled = false; btn.textContent = label; });
 }
 function resetHCF() {
   document.getElementById('hcfContent').style.display = 'block';

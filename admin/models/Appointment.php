@@ -17,14 +17,15 @@ class Appointment extends LeadModel
 
     /** Must match the options on the website's booking form. */
     public const SERVICES = [
-        'Children Counseling',
-        'Marriage Counseling',
-        'Senior Citizen Counseling',
-        'Personal Counseling',
-        'Relationship Counseling',
-        'Financial Counseling',
-        'Stress and Anxiety Management',
-        'Depression Support',
+        'Individual Counselling',
+        'Child and Adolescent Counselling',
+        'Relationship and Marital Counselling',
+        'Parenting Counselling and Guidance',
+        'Women\'s and Men\'s Mental Well-being',
+        'Older Adult Counselling',
+        'Career Guidance and Psychological Assessment',
+        'Career Counselling and Guidance',
+        'Workshops, Seminars and Motivational Speaking',
     ];
 
     public const TYPES = [
