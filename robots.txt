@@ -1,0 +1,9 @@
+# robots.txt for https://blossomcounselingservices.in
+User-agent: *
+Allow: /
+Disallow: /admin/
+# Blog pages load their content from this API, so crawlers must be able to reach it
+Allow: /admin/index.php?action=api
+Disallow: /database/
+
+Sitemap: https://blossomcounselingservices.in/sitemap.xml

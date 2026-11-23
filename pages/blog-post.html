@@ -4,6 +4,29 @@
 <head>
 <meta charset="UTF-8">
 <title>Article | Blossom Counseling Amravati</title>
+<!-- SEO:START -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Read this mental health and counselling article from Blossom Counseling Services, Amravati.">
+<meta name="keywords" content="mental health article, counselling advice, psychologist Amravati">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<meta name="author" content="Blossom Counseling Services">
+<meta name="theme-color" content="#5a5cb8">
+<meta name="geo.region" content="IN-MH">
+<meta name="geo.placename" content="Amravati">
+<link rel="icon" type="image/png" href="../public/logo.png">
+<link rel="apple-touch-icon" href="../public/logo.png">
+<meta property="og:locale" content="en_IN">
+<meta property="og:site_name" content="Blossom Counseling Services">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Article | Blossom Counseling Amravati">
+<meta property="og:description" content="Read this mental health and counselling article from Blossom Counseling Services, Amravati.">
+<meta property="og:image" content="https://blossomcounselingservices.in/public/homeHero.png">
+<meta property="og:image:alt" content="Blossom Counseling Services - counselling in Amravati">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Article | Blossom Counseling Amravati">
+<meta name="twitter:description" content="Read this mental health and counselling article from Blossom Counseling Services, Amravati.">
+<meta name="twitter:image" content="https://blossomcounselingservices.in/public/homeHero.png">
+<!-- SEO:END -->
 <link rel="stylesheet" href="../style.css">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500;600&family=Rubik:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -183,6 +206,28 @@
     if(!d||!d.ok){ fail(); return; }
     var p=d.post;
     document.title=p.title+' | Blossom Counseling Amravati';
+    (function(){ // SEO: per-article meta, canonical and structured data
+      var base='https://blossomcounselingservices.in/pages/blog-post.html?slug='+encodeURIComponent(p.slug||slug);
+      var plain=(function(){var t=document.createElement('div'); t.innerHTML=p.content||''; return (t.textContent||'').replace(/\s+/g,' ').trim();})();
+      var desc=(p.excerpt||p.summary||plain||p.title).toString().replace(/\s+/g,' ').trim();
+      if(desc.length>155) desc=desc.slice(0,152).replace(/\s+\S*$/,'')+'...';
+      function meta(sel,attr,val,make){var m=document.querySelector(sel); if(!m){m=document.createElement(make.tag); for(var k in make.attrs) m.setAttribute(k,make.attrs[k]); document.head.appendChild(m);} m.setAttribute(attr,val);}
+      meta('meta[name="description"]','content',desc,{tag:'meta',attrs:{name:'description'}});
+      meta('link[rel="canonical"]','href',base,{tag:'link',attrs:{rel:'canonical'}});
+      meta('meta[property="og:title"]','content',p.title,{tag:'meta',attrs:{property:'og:title'}});
+      meta('meta[property="og:description"]','content',desc,{tag:'meta',attrs:{property:'og:description'}});
+      meta('meta[property="og:url"]','content',base,{tag:'meta',attrs:{property:'og:url'}});
+      meta('meta[name="twitter:title"]','content',p.title,{tag:'meta',attrs:{name:'twitter:title'}});
+      meta('meta[name="twitter:description"]','content',desc,{tag:'meta',attrs:{name:'twitter:description'}});
+      if(p.image){ var img=/^https?:/i.test(p.image)?p.image:new URL(p.image,location.href).href;
+        meta('meta[property="og:image"]','content',img,{tag:'meta',attrs:{property:'og:image'}});
+        meta('meta[name="twitter:image"]','content',img,{tag:'meta',attrs:{name:'twitter:image'}}); }
+      var ld={'@context':'https://schema.org','@type':'BlogPosting',headline:p.title,description:desc,mainEntityOfPage:base,
+        author:{'@type':'Organization',name:'Blossom Counseling Services'},
+        publisher:{'@type':'Organization',name:'Blossom Counseling Services',logo:{'@type':'ImageObject',url:'https://blossomcounselingservices.in/public/logo.png'}}};
+      if(p.image) ld.image=[/^https?:/i.test(p.image)?p.image:new URL(p.image,location.href).href];
+      var s=document.createElement('script'); s.type='application/ld+json'; s.text=JSON.stringify(ld); document.head.appendChild(s);
+    })();
     $('postCrumb').textContent=p.category; $('postTag').textContent=p.category; $('postTitle').textContent=p.title;
     $('postDate').textContent='Posted '+p.date; $('postRead').textContent=p.read_time+' min read';
     if(p.image){ $('postImg').src=p.image; $('postImg').alt=p.title; $('postImgBox').hidden=false; }
