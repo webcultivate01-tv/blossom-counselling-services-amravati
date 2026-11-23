@@ -83,6 +83,8 @@
     if (!a || overlay.contains(a)) return;
     if (/book\s+(an\s+)?appointment/i.test(a.textContent)) {
       e.preventDefault();
+      // Per-button override: <a data-topmate="https://topmate.io/..."> ; per-page: window.TOPMATE_URL
+      overlay.querySelector('#bk-online').href = a.getAttribute('data-topmate') || window.TOPMATE_URL || TOPMATE_URL;
       open();
     }
   });
