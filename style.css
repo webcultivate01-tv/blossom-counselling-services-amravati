@@ -721,10 +721,10 @@ footer {
 .topbar-right .tb-wa { background:#25D366; }
 
 /* ===== LOGO IMAGE ===== */
-.logo-img { height:64px; width:auto; display:block; }
-.footer-logo-img { height:84px; width:auto; display:block; background:#fff; border-radius:12px; padding:4px 10px; }
-@media (max-width: 768px) { .logo-img { height:42px; } .footer-logo-img { height:66px; } }
-@media (max-width: 480px) { .logo-img { height:38px; } }
+.logo-img { height:60px; width:auto; display:block; }
+.footer-logo-img { height:76px; width:auto; display:block; background:#fff; border-radius:12px; padding:8px 14px; }
+@media (max-width: 768px) { .logo-img { height:44px; } .footer-logo-img { height:60px; } }
+@media (max-width: 480px) { .logo-img { height:40px; } }
 
 
 /* ===== Services page: coverage lists ===== */

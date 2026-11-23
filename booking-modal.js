@@ -1,7 +1,6 @@
 /* Booking choice popup: In-Person -> contact page, Online -> Topmate (Google Meet) */
 (function () {
-  // TODO: replace with the real Topmate profile URL
-  var TOPMATE_URL = 'https://topmate.io/YOUR_USERNAME';
+  var TOPMATE_URL = 'https://topmate.io/nimisha_saboo';
   var CONTACT_URL = (/\/pages\//i.test(location.pathname) ? '' : 'pages/') + 'contact.html#booking-form';
 
   var css = '\
