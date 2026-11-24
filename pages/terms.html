@@ -51,6 +51,7 @@
 @media(max-width:1024px){.legal-hero{padding:28px 4%}.legal-main{padding:36px 4% 56px}}
 </style>
 <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../booking-popup.css"/>
 </head>
 <body>
 
@@ -105,7 +106,7 @@
       <li><a class="nav-link" href="contact.html">Contact Us</a></li>
     </ul>
   </div>
-  <a class="nav-btn" href="contact.html">Book Appointment</a>
+  <a class="nav-btn" href="#book-choice">Book Appointment</a>
   <div class="hamburger" id="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
 </nav>
 
@@ -129,7 +130,7 @@
   <a class="mobile-nav-link" href="gallery.html">Gallery</a>
   <a class="mobile-nav-link" href="blog.html">Blog</a>
   <a class="mobile-nav-link" href="contact.html">Contact Us</a>
-  <a class="mobile-book-btn" href="contact.html">Book an Appointment</a>
+  <a class="mobile-book-btn" href="#book-choice">Book an Appointment</a>
 </div>
 
 <section class="legal-hero">
@@ -182,7 +183,7 @@
   <h2>Book a Session Today &amp;<br>Start Changing Your Life!</h2>
   <p>Take the first step towards a brighter, more fulfilling future. Our counsellors are ready to guide you.</p>
   <div class="cta-banner-btns">
-    <a class="btn-white" href="contact.html">Book an Appointment</a>
+    <a class="btn-white" href="#book-choice">Book an Appointment</a>
     <a class="btn-white-outline" href="tel:+919423425900">Call Us Now</a>
   </div>
   <ul class="cta-points">
@@ -219,7 +220,7 @@
         <li><a href="gallery.html">Gallery</a></li>
         <li><a href="blog.html">Blog</a></li>
         <li><a href="contact.html">Contact Us</a></li>
-        <li><a href="contact.html">Book Appointment</a></li>
+        <li><a href="#book-choice">Book Appointment</a></li>
         <li><a href="privacy.html">Privacy Policy</a></li>
         <li><a href="terms.html">Terms &amp; Conditions</a></li>
       </ul>
@@ -288,6 +289,24 @@ function toggleMobileServices() {
   els.forEach(function(e){ io.observe(e); });
 })();
 </script>
-<script src="../booking-modal.js"></script>
+<!-- Booking choice popup: In-Person -> contact page, Online -> Topmate (Google Meet) -->
+<div class="bk-overlay" id="book-choice" role="dialog" aria-modal="true" aria-labelledby="bk-title">
+  <a class="bk-backdrop" href="#" aria-label="Close"></a>
+  <div class="bk-modal">
+    <a class="bk-close" href="#" aria-label="Close">&times;</a>
+    <h3 class="bk-title" id="bk-title">How would you like to meet?</h3>
+    <p class="bk-sub">Choose the type of appointment that suits you.</p>
+    <div class="bk-options">
+      <a class="bk-opt" href="contact.html#booking-form">
+        <div class="bk-ico"><i class="fa-solid fa-location-dot"></i></div>
+        <b>In-Person</b><span>Visit our counselling centre in Amravati</span>
+      </a>
+      <a class="bk-opt" href="https://topmate.io/nimisha_saboo" target="_blank" rel="noopener">
+        <div class="bk-ico"><i class="fa-solid fa-video"></i></div>
+        <b>Online (Google Meet)</b><span>Book a virtual session from anywhere</span>
+      </a>
+    </div>
+  </div>
+</div>
 </body>
 </html>

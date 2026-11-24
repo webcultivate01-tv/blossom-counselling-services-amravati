@@ -1,0 +1,18 @@
+/* Booking choice popup (pure CSS, no JS): opens via href="#book-choice", closes via href="#" */
+.bk-overlay{position:fixed;inset:0;background:rgba(31,29,54,.55);-webkit-backdrop-filter:blur(3px);backdrop-filter:blur(3px);display:flex;align-items:center;justify-content:center;padding:16px;z-index:10000;opacity:0;visibility:hidden;transition:opacity .25s,visibility .25s}
+.bk-overlay:target{opacity:1;visibility:visible}
+body:has(.bk-overlay:target){overflow:hidden}
+.bk-backdrop{position:absolute;inset:0;cursor:default}
+.bk-modal{background:#fff;border-radius:20px;max-width:520px;width:100%;padding:32px 28px 28px;position:relative;box-shadow:0 20px 60px rgba(31,29,54,.3);transform:translateY(16px) scale(.98);transition:transform .25s;max-height:95vh;overflow-y:auto}
+.bk-overlay:target .bk-modal{transform:none}
+.bk-close{position:absolute;top:12px;right:14px;width:34px;height:34px;border-radius:50%;background:#f3f2fc;color:#1f1d36;font-size:20px;line-height:1;display:flex;align-items:center;justify-content:center;text-decoration:none}
+.bk-close:hover{background:#d6d6f3}
+.bk-title{font-size:22px;font-weight:700;color:#1f1d36;margin:0 0 6px;text-align:center}
+.bk-sub{font-size:15px;color:#5f5d78;text-align:center;margin:0 0 22px}
+.bk-options{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.bk-opt{display:flex;flex-direction:column;align-items:center;text-align:center;gap:8px;padding:22px 14px;border:2px solid #e3e2f2;border-radius:16px;background:#faf9fd;color:#1f1d36;text-decoration:none;cursor:pointer;transition:border-color .2s,transform .2s,box-shadow .2s;font-family:inherit}
+.bk-opt:hover,.bk-opt:focus-visible{border-color:#6f73d2;transform:translateY(-3px);box-shadow:0 8px 22px rgba(111,115,210,.2);outline:none}
+.bk-ico{width:54px;height:54px;border-radius:50%;background:#f3f2fc;color:#6f73d2;display:flex;align-items:center;justify-content:center;font-size:22px}
+.bk-opt b{font-size:17px}
+.bk-opt span{font-size:13.5px;color:#5f5d78;line-height:1.4}
+@media(max-width:480px){.bk-options{grid-template-columns:1fr}.bk-modal{padding:28px 18px 20px}}
