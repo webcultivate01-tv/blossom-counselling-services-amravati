@@ -8,10 +8,10 @@ class GalleryItem
         'child' => 'Child & Adolescent Counselling',
         'relationship' => 'Relationship & Marital Counselling',
         'parenting' => 'Parenting Counselling & Guidance',
-        'wellbeing' => "Women's & Men's Well-being",
-        'older' => 'Older Adult Counselling',
+        'wellbeing' => "Counselling for Women and Men",
+        'older' => 'Emotional Well-being for Seniors',
         'career' => 'Career Guidance & Assessment',
-        'workshops' => 'Workshops, Seminars & Speaking',
+        'workshops' => 'Workshops, Seminars & Motivational Talks',
     ];
 
     private static function db(): PDO

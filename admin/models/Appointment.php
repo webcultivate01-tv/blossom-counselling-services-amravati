@@ -21,11 +21,11 @@ class Appointment extends LeadModel
         'Child and Adolescent Counselling',
         'Relationship and Marital Counselling',
         'Parenting Counselling and Guidance',
-        'Women\'s and Men\'s Mental Well-being',
-        'Older Adult Counselling',
+        'Counselling for Women and Men',
+        'Emotional Well-being for Seniors',
         'Career Guidance and Psychological Assessment',
         'Career Counselling and Guidance',
-        'Workshops, Seminars and Motivational Speaking',
+        'Workshops, Seminars & Motivational Talks',
     ];
 
     public const TYPES = [

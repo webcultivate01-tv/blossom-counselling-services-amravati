@@ -62,7 +62,7 @@
       ]
     },
     {
-      id: 'wellbeing', name: 'Women\'s and Men\'s Mental Well-being', short: 'Women\'s & Men\'s Well-being',
+      id: 'wellbeing', name: 'Counselling for Women and Men', short: 'Counselling for Women and Men',
       tag: 'For Women &amp; Men', icon: 'fa-spa',
       img: "public/services/Women's & Men's Well-being.png",
       desc: 'A supportive space to address emotional, personal, family and professional challenges. Focus on stress management, self-worth, emotional well-being, relationship concerns, identity and navigating different stages of life.',
@@ -80,7 +80,7 @@
       ]
     },
     {
-      id: 'older', name: 'Older Adult Counselling', short: 'Older Adult Counselling',
+      id: 'older', name: 'Emotional Well-being for Seniors', short: 'Emotional Well-being for Seniors',
       tag: 'For Golden Years', icon: 'fa-hand-holding-heart',
       img: "public/services/Older Adult Counselling.png",
       desc: 'Emotional support for older adults navigating loneliness, grief, retirement, changing family roles and life transitions. Encouraging emotional well-being, meaningful connections and healthy adjustment.',
@@ -115,7 +115,7 @@
       ]
     },
     {
-      id: 'workshops', name: 'Workshops, Seminars and Motivational Speaking', short: 'Workshops, Seminars & Speaking',
+      id: 'workshops', name: 'Workshops, Seminars & Motivational Talks', short: 'Workshops, Seminars & Motivational Talks',
       tag: 'For Groups &amp; Organisations', icon: 'fa-chalkboard-user',
       img: "public/services/Workshops, Seminars & Speaking.png",
       desc: 'Conducting interactive workshops, seminars and motivational sessions for schools, colleges, teachers, parents, students, women, community groups and organisations. Topics include mental health awareness, emotional intelligence, stress management, confidence building, resilience, relationships and personal growth.',
@@ -263,7 +263,7 @@
     nav.innerHTML = SERVICES.map(function (s) { return sbItem(s.id, s.icon, esc(s.short)); }).join('') +
       sbItem('modes', 'fa-globe', 'Online &amp; Offline Sessions');
 
-    var book = '<a class="svc-book-btn" href="' + PG + 'contact.html"><i class="fa-regular fa-calendar-check"></i> Book Appointment</a>';
+    var book = '<a class="svc-book-btn" href="#book-choice"><i class="fa-regular fa-calendar-check"></i> Book Appointment</a>';
     var secs = SERVICES.map(function (s) {
       var count = s.groups ? s.groups.reduce(function (n, g) { return n + g.items.length; }, 0) : s.items.length;
       return '<section class="service-section" id="' + s.id + '"><article class="svc-card">' +
